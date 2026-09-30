@@ -1,0 +1,26 @@
+{
+  "name": "mage",
+  "version": "0.0.0",
+  "description": "Mage skills for images, video, and audio: generation, consistent characters, product photoshoots, marketplace listings, ad variants, resizes, and translations, UGC videos, faceless videos, and YouTube thumbnails, through the Mage connector.",
+  "author": {
+    "name": "Mage",
+    "url": "https://www.mage.space"
+  },
+  "homepage": "https://www.mage.space/skills",
+  "repository": "https://github.com/mage-space/skills",
+  "license": "MIT",
+  "keywords": [
+    "mage",
+    "image-generation",
+    "video-generation",
+    "audio-generation",
+    "product-photography",
+    "marketplace-listings",
+    "ad-creative",
+    "ugc",
+    "faceless-video",
+    "youtube-thumbnail",
+    "consistent-characters",
+    "mcp"
+  ]
+}

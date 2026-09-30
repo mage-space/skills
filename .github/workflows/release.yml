@@ -1,0 +1,31 @@
+name: Release
+
+# release-please keeps a release PR open from the conventional commits on main.
+# Merging it bumps VERSION, every plugin manifest, and every skill's
+# metadata.version, tags the release, and writes the changelog.
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  release-please:
+    name: Release PR
+    # Idle until the release bot is configured (see CONTRIBUTING.md).
+    if: vars.MAGE_BOT_APP_ID != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # A GitHub App token, so CI runs on the release PR.
+      - uses: actions/create-github-app-token@v3
+        id: app
+        with:
+          app-id: ${{ vars.MAGE_BOT_APP_ID }}
+          private-key: ${{ secrets.MAGE_BOT_PRIVATE_KEY }}
+      - uses: googleapis/release-please-action@v5
+        with:
+          token: ${{ steps.app.outputs.token }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json

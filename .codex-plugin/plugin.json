@@ -1,0 +1,47 @@
+{
+  "name": "mage",
+  "version": "0.0.0",
+  "description": "Mage skills for images, video, and audio through the Mage connector: generation, consistent characters, product photoshoots, marketplace listings, ad variants, UGC and faceless videos, and YouTube thumbnails.",
+  "author": {
+    "name": "Mage",
+    "url": "https://www.mage.space"
+  },
+  "homepage": "https://www.mage.space/skills",
+  "repository": "https://github.com/mage-space/skills",
+  "license": "MIT",
+  "keywords": [
+    "mage",
+    "image-generation",
+    "video-generation",
+    "audio-generation",
+    "product-photography",
+    "ad-creative",
+    "ugc",
+    "faceless-video",
+    "youtube-thumbnail"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Mage",
+    "shortDescription": "Create images, video, and audio with Mage",
+    "longDescription": "Mage skills turn Codex into a creative production agent on Mage's image, video, and audio models: generate anything, keep characters consistent, shoot products, build marketplace listings, multiply, resize, and localize ads, make UGC and faceless videos, and design YouTube thumbnails. Every generation runs through the Mage connector and is paid in Gems.",
+    "developerName": "Mage",
+    "category": "Design",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://www.mage.space/skills",
+    "defaultPrompt": [
+      "Shoot three lifestyle photos of my product with Mage",
+      "Make an Amazon listing image set for this product",
+      "Resize this ad for Stories, feed, and banners",
+      "Make a 15-second UGC review video of my product",
+      "Make a faceless short about a surprising history fact",
+      "Design a YouTube thumbnail for my next video"
+    ],
+    "brandColor": "#E8A87C",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
+  }
+}

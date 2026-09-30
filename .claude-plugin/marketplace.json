@@ -1,0 +1,27 @@
+{
+  "name": "mage",
+  "owner": {
+    "name": "Mage",
+    "url": "https://www.mage.space"
+  },
+  "plugins": [
+    {
+      "name": "mage",
+      "source": "./",
+      "description": "Mage skills for images, video, and audio: generation, consistent characters, product photoshoots, marketplace listings, ad variants, resizes, and translations, UGC videos, faceless videos, and YouTube thumbnails, through the Mage connector.",
+      "version": "0.0.0",
+      "skills": [
+        "./mage-generate",
+        "./mage-characters",
+        "./mage-product-photoshoot",
+        "./mage-marketplace-cards",
+        "./mage-ad-multiplier",
+        "./mage-ad-resizer",
+        "./mage-ad-localizer",
+        "./mage-ugc-video",
+        "./mage-faceless-video",
+        "./mage-youtube-thumbnail"
+      ]
+    }
+  ]
+}

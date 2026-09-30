@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+# Link every Mage skill in this checkout into an agent's skills folder.
+# Idempotent: safe to run again after `git pull`.
+set -euo pipefail
+
+REPO="$(cd "$(dirname "$0")" && pwd)"
+HOST=""
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --host) HOST="${2:-}"; shift 2 ;;
+    --host=*) HOST="${1#--host=}"; shift ;;
+    -h|--help)
+      cat <<USAGE
+Usage: ./setup [--host claude|codex]
+
+Links each mage-* skill into ~/.claude/skills or ~/.codex/skills.
+Detects the agent when --host is omitted. For other agents, use:
+  npx skills add mage-space/skills
+USAGE
+      exit 0 ;;
+    *) echo "Unknown option: $1" >&2; exit 1 ;;
+  esac
+done
+
+if [ -z "$HOST" ]; then
+  if [ -d "$HOME/.claude" ]; then HOST=claude
+  elif [ -d "$HOME/.codex" ]; then HOST=codex
+  else
+    echo "Could not detect your agent. Re-run with --host claude|codex, or use: npx skills add mage-space/skills" >&2
+    exit 1
+  fi
+fi
+
+case "$HOST" in
+  claude) TARGET="$HOME/.claude/skills" ;;
+  codex) TARGET="$HOME/.codex/skills" ;;
+  *) echo "Unsupported host: $HOST. Use: npx skills add mage-space/skills" >&2; exit 1 ;;
+esac
+
+mkdir -p "$TARGET"
+for src in "$REPO"/mage-*/; do
+  src="${src%/}"
+  name="$(basename "$src")"
+  dst="$TARGET/$name"
+  if [ -L "$dst" ]; then
+    ln -sfn "$src" "$dst"
+  elif [ -e "$dst" ]; then
+    echo "! $dst exists and is not a link; left alone" >&2
+    continue
+  else
+    ln -s "$src" "$dst"
+  fi
+  echo "✓ $name"
+done
+
+cat <<DONE
+
+Linked into $TARGET.
+
+Next, connect Mage if you haven't:
+  Claude Code: claude mcp add --transport http mage https://mcp.mage.space/mcp
+  Others:      https://www.mage.space/mcp
+
+Then try: "Shoot three lifestyle photos of my product with Mage."
+DONE

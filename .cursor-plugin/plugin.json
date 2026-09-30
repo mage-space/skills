@@ -1,0 +1,27 @@
+{
+  "$schema": "https://cursor.com/schemas/cursor-plugin/plugin.json",
+  "name": "mage",
+  "displayName": "Mage",
+  "version": "0.0.0",
+  "description": "Mage skills for images, video, and audio through the Mage connector: generation, consistent characters, product photoshoots, marketplace listings, ad variants, UGC and faceless videos, and YouTube thumbnails.",
+  "author": {
+    "name": "Mage",
+    "email": "mage@mage.space"
+  },
+  "publisher": "Mage",
+  "homepage": "https://www.mage.space/skills",
+  "repository": "https://github.com/mage-space/skills",
+  "license": "MIT",
+  "category": "ai-content",
+  "keywords": [
+    "mage",
+    "image-generation",
+    "video-generation",
+    "audio-generation",
+    "product-photography",
+    "ad-creative",
+    "ugc",
+    "faceless-video",
+    "youtube-thumbnail"
+  ]
+}

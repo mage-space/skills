@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Mage connector or account problems
+    url: https://docs.mage.space/api/mcp
+    about: Connecting Mage, sign-in, Gems, and billing questions.
