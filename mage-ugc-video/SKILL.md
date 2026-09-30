@@ -52,7 +52,7 @@ Scripts, hooks, and timing: `references/ugc-scripts.md`.
 
 ## Workflow
 
-1. **Script.** Write the lines for the chosen length: about 20–25 spoken words for 10 seconds, 35–40 for 15. Open with a hook in the first two seconds, keep the product on camera, end on a short CTA. Keep product claims to what the user told you.
+1. **Script.** Write the lines for the chosen length: about 20–25 spoken words for 10 seconds, 35–40 for 15. Open with a hook in the first two seconds, keep the product on camera, end on a short CTA. Every statement about the product, including how it feels, smells, fits, or works, comes from the user's facts or their product page; ask for two or three talking points when you have none.
 2. **Creator.** Use the user's `@character` (their voice comes along), or describe one. To reuse the same creator later, offer to save them with `mage-characters`.
 3. **Keyframe** with Mango 3 (`mango`, `mango-v3`), `aspect_ratio: "9:16"`, product in `image`:
 

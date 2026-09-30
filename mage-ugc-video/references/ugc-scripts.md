@@ -39,7 +39,7 @@ People speak about 2.5 words a second on camera. Leave half a second of silence 
 **problem_solution (15 s)**
 > "My skin was so dull this winter. Nothing helped. Then I tried this. Two weeks in, and people keep asking what I changed. This."
 
-Replace any claim with one the user confirms. Without supportable results, stick to sensory detail (texture, scent, fit, how it's used).
+The scripts assume the user supplied these talking points. Every product statement, sensory details included (texture, scent, absorption, fit), comes from the user's facts or product page. With no talking points, ask for two or three; never fill the gap with invented ones.
 
 ## Direction for the presenter
 

@@ -12,6 +12,7 @@
   "homepage": "https://www.mage.space/skills",
   "repository": "https://github.com/mage-space/skills",
   "license": "MIT",
+  "skills": "./",
   "category": "ai-content",
   "keywords": [
     "mage",

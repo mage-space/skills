@@ -100,6 +100,12 @@ def main() -> int:
         if found != version:
             errors.append(f"{manifest}: version {found!r} != VERSION {version!r}")
 
+    # Cursor scans the named folder's subfolders for SKILL.md; without the field it
+    # scans skills/, which this repository doesn't have.
+    cursor = json.loads((ROOT / ".cursor-plugin/plugin.json").read_text())
+    if cursor.get("skills") != "./":
+        errors.append('.cursor-plugin/plugin.json: "skills" must be "./" so Cursor finds every skill')
+
     marketplace = json.loads((ROOT / ".claude-plugin/marketplace.json").read_text())
     listed = {s.removeprefix("./").rstrip("/") for s in marketplace["plugins"][0]["skills"]}
     for folder in folders:
