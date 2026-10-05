@@ -82,7 +82,7 @@ The order matters: the prompt calls `image` "the first image" and `additional_im
 
 ## Check and deliver
 
-If you can see the result: check where the garment meets skin, and that the face, hair, and pose are unchanged. Retry once on a hard failure. If you can't see images, say the result needs the user's review. Deliver the link.
+If you can see the result: check where the garment meets skin, and that the face, hair, pose, and framing are unchanged. When the outfit image shows pieces the source framing can't (shoes or trousers for a waist-up photo), the model may re-pose or pull back to show them. If the framing changed, say so and offer a retry, an outfit image cropped to the pieces that fit the frame, or Mango 3 Turbo, which held the framing in testing. Retry once on a hard failure. If you can't see images, say the result needs the user's review. Deliver the link.
 
 Complex garments, sheer fabric, and unusual layering are harder than a simple silhouette. For the same outfit across a whole series, save it as an outfit reference with `mage-characters` and mention its `@handle` instead of swapping each image.
 
