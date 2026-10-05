@@ -21,7 +21,7 @@ metadata:
 
 # Mage Character Muse
 
-Start from an image that is close, then steer it: change the face with a preset or describe the change, compare the takes, and save the one that is right. This is the [Character Builder: Muse app](https://www.mage.space/apps/character-builder-muse) as a skill: the same two stages, face presets, models, and defaults, run through the Mage connector.
+Start from an image that is close, then steer it: change the face with a preset or describe the change, compare the takes, and save the one that is right. This is the [Character Builder: Muse app](https://www.mage.space/apps/character-builder-muse) as a skill: the same two stages, face presets and models, run through the Mage connector.
 
 ## Before you start
 

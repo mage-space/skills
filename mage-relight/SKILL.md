@@ -20,7 +20,7 @@ metadata:
 
 # Mage Relight
 
-Change the direction, hardness, brightness, and color of the light in an image, and nothing else. This is the [Relight app](https://www.mage.space/apps/relight) as a skill: the same controls, prompt, models, and defaults, run through the Mage connector.
+Change the direction, hardness, brightness, and color of the light in an image, and nothing else. This is the [Relight app](https://www.mage.space/apps/relight) as a skill: the same controls, prompt and models, run through the Mage connector.
 
 ## Before you start
 

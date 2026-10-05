@@ -4,13 +4,14 @@ description: |
   Swap a face into a video with Mage: the new identity (face, hair, skin,
   neck) is applied in every frame while the original pose, motion,
   expressions, lip movements, clothing, and background stay. The Video Face
-  Swap app as a skill, on Lemon by default. Use when: "video face swap", "swap
-  the face in this video", "put my character's face on this clip", "put my
-  face in this video", "replace her face in the footage", "the face drifted in
-  this clip, fix it". NOT for: face swaps in a still image (mage-face-swap),
-  replacing the whole person with body and outfit (mage-video-character-swap),
-  other video edits (mage-video-editor), lip sync to audio (mage-lipsync), or
-  putting a real person into a video without their consent.
+  Swap app as a skill, on Cherry 2 Pro by default. Use when: "video face
+  swap", "swap the face in this video", "put my character's face on this
+  clip", "put my face in this video", "replace her face in the footage", "the
+  face drifted in this clip, fix it". NOT for: face swaps in a still image
+  (mage-face-swap), replacing the whole person with body and outfit
+  (mage-video-character-swap), other video edits (mage-video-editor), lip sync
+  to audio (mage-lipsync), or putting a real person into a video without their
+  consent.
 license: MIT
 compatibility: Requires the Mage connector (https://mcp.mage.space/mcp) and a Mage account with Gems.
 metadata:
@@ -20,13 +21,13 @@ metadata:
 
 # Mage Video Face Swap
 
-Replace the face and hair of the person in a video with another identity, keeping the performance: pose, motion, expressions, and lip movements. This is the [Video Face Swap app](https://www.mage.space/apps/video-face-swap) as a skill: the same prompt, models, and defaults, run through the Mage connector.
+Replace the face and hair of the person in a video with another identity, keeping the performance: pose, motion, expressions, and lip movements. This is the [Video Face Swap app](https://www.mage.space/apps/video-face-swap) as a skill: the same prompt and models, run through the Mage connector.
 
 ## Before you start
 
 1. **Mage tools:** `get_model`, `estimate_cost`, `generate`, `get_request`, `list_characters`, and `create_upload` for local files. If they are missing, ask the user to connect Mage (Claude: Customize → Connectors → Add custom connector, `https://mcp.mage.space/mcp`; Claude Code: `claude mcp add --transport http mage https://mcp.mage.space/mcp`; others: https://www.mage.space/mcp), then wait.
 2. **Inputs are links:** https URLs of the files themselves, data URLs under about 3 MB, uploads from disk (`create_upload`, when you can run commands), or earlier Mage results. Files attached to the chat never reach Mage: ask for a direct link. A page that plays a video (YouTube, Instagram, a Drive preview) is not a file.
-3. **The clip's length matters.** Each model accepts a range of clip lengths and Lemon bills the clip's seconds. Measure it when you can run commands (`ffprobe -v error -show_entries format=duration -of csv=p=0 clip.mp4`); otherwise ask the user how long it is. `estimate_cost` measures a clip that is a `create_upload` URL or an earlier Mage result, and answers `requires_media_measurement` for a clip on another host: upload it with `create_upload` to price it.
+3. **The clip's length matters.** Each model accepts a range of clip lengths, and the price depends on the clip's length. Measure it when you can run commands (`ffprobe -v error -show_entries format=duration -of csv=p=0 clip.mp4`); otherwise ask the user how long it is. `estimate_cost` measures a clip that is a `create_upload` URL or an earlier Mage result, and answers `requires_media_measurement` for a clip on another host: upload it with `create_upload` to price it.
 4. **Consent.** Harmful deepfakes are forbidden on Mage. Only use a real person's face, body, or voice with that person's permission, and never to deceive, harass, or sexualize. When the user hasn't said whose likeness it is, state this rule in one line with the price instead of questioning them; if they say they lack permission, stop. The user also needs permission for the footage itself.
 
 ## UX rules
@@ -40,12 +41,12 @@ Replace the face and hair of the person in a video with another identity, keepin
 
 Both are required. Ask for whichever is missing.
 
-1. **The video:** one clip, MP4, MOV, or WebM, with the person clearly visible. 1–15 seconds on the default model; other models differ (`references/models.md`).
+1. **The video:** one clip, MP4, MOV, or WebM, with the person clearly visible. 4–30 seconds on the default model; other models differ (`references/models.md`).
 2. **The face to swap in:** a clear, front-facing image. Either an image link, or a saved character by `@handle` (`list_characters` shows them; build one with `mage-character-builder` or save one with `mage-characters`).
 
 ## Prompt
 
-Send exactly this:
+The app's swap prompt:
 
 ```
 Replace the face and hair of the person in the video with the identity from the reference image.
@@ -59,36 +60,45 @@ Keep skin tone, texture, and color fully harmonized across the entire head and n
 Seamlessly blend edges between the replaced area and the rest of each frame. Keep the background, clothing, other subjects, and all remaining visual content identical to the source video.
 ```
 
-- **Image reference:** send the prompt as it is, with the image in `image`.
-- **Saved character:** don't send `image`. Add one line after the prompt, separated by a blank line, so Mage attaches the character: `Reference: @handle`. The prompt still says "the reference image"; the character's image is that reference, as in the app.
-- **Cherry models:** the app wraps this prompt before sending it, and the `Reference:` line goes after the wrapper. See `references/models.md`.
+On a Cherry model, which is the default, the app puts that whole prompt inside this wrapper, in the slot. Send it the same way:
+
+```
+Use the provided reference video as the source of truth. Recreate its visual content as closely and faithfully as possible from beginning to end.
+
+Preserve the shot sequence, timing, camera angle, camera movement, framing, composition, subject identity, poses, actions, body movement, facial expressions, environment, background, lighting, color grading, and visual style of the reference video.
+
+Apply only the following requested change:
+<the change>
+
+Make the minimum changes necessary to fulfill the request. Everything not explicitly mentioned in the requested change must remain consistent with the reference video. Do not restage the scene, reinterpret the action, alter the camera or motion, add or remove unrelated subjects or objects, or introduce unrelated visual changes unless the request explicitly requires it.
+```
+
+- **Image reference:** send the wrapped prompt, with the image in `image`.
+- **Saved character:** don't send `image`. Add one line after the whole wrapped prompt, separated by a blank line, so Mage attaches the character: `Reference: @handle`. The prompt still says "the reference image"; the character's image is that reference, as in the app.
+- **Models outside the Cherry line** get the swap prompt alone, without the wrapper.
 
 ## Settings
 
-The app's defaults:
-
-- Model: Lemon (`lemon`, `model_id: "lemon"`).
+- Model: Cherry 2 Pro (`cherry`, `model_id: "cherry-2-pro"`), Mage's default for video. When the user asks for another model, use it.
 - `resolution`: `480p`, the cheapest. Offer `720p` or `1080p` with the price when the user wants a final.
-- `duration`: the clip's length rounded to the nearest whole second (Lemon takes any whole second from `"2"` to `"30"`).
-- `aspect_ratio`: the option closest to the clip's shape (`16:9`, `4:3`, `1:1`, `3:4`, `9:16`).
+- Leave `duration` and `aspect_ratio` out: on Cherry 2 Pro the output follows the clip's length and shape.
 - `use_character_voices: false`.
+- The clip must be 4 to 30 seconds long. For a shorter clip, say so and offer Lemon, which takes 1 to 15 seconds.
 
-Other models the app offers (Cherry line, Plum, Plum Max, Berry), their clip limits, and their fields: `references/models.md`. Read it before using any model but Lemon.
+Other models the app offers (Lemon, the other Cherry models, Plum, Plum Max, Berry), with their clip limits, fields, and settings: `references/models.md`. Read it before using any model but Cherry 2 Pro.
 
 ## Run
 
 ```json
 {
-  "model_id": "lemon",
+  "model_id": "cherry-2-pro",
   "resolution": "480p",
-  "duration": "<covers the clip>",
-  "aspect_ratio": "<closest to the clip>",
   "videos": [
     "<the clip>"
   ],
   "image": "<the reference image>",
   "use_character_voices": false,
-  "prompt": "<the prompt above>"
+  "prompt": "<the wrapped prompt>"
 }
 ```
 

@@ -19,7 +19,7 @@ metadata:
 
 # Mage Face Swap
 
-Put the face and hair from one image onto the person in another, keeping the pose, expression, clothing, and background. This is the [Face Swap app](https://www.mage.space/apps/face-swap) as a skill: the same prompt, models, and defaults, run through the Mage connector.
+Put the face and hair from one image onto the person in another, keeping the pose, expression, clothing, and background. This is the [Face Swap app](https://www.mage.space/apps/face-swap) as a skill: the same prompt and models, run through the Mage connector.
 
 ## Before you start
 

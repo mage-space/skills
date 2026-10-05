@@ -20,7 +20,7 @@ metadata:
 
 # Mage Inpaint
 
-Mark a region of an image, describe what should be there, and change only that. This is the [Inpaint app](https://www.mage.space/apps/inpaint) as a skill: the same red-overlay mask, prompt, models, and defaults, run through the Mage connector.
+Mark a region of an image, describe what should be there, and change only that. This is the [Inpaint app](https://www.mage.space/apps/inpaint) as a skill: the same red-overlay mask, prompt and models, run through the Mage connector.
 
 ## Before you start
 

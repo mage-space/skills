@@ -20,7 +20,7 @@ metadata:
 
 # Mage Character Builder
 
-Build a character from a checklist of traits, generate a full-body portrait, adjust until it is right, then save it with an `@handle`. This is the [Character Builder: Attributes app](https://www.mage.space/apps/character-builder-attributes) as a skill: the same attributes, prompt, models, and defaults, run through the Mage connector.
+Build a character from a checklist of traits, generate a full-body portrait, adjust until it is right, then save it with an `@handle`. This is the [Character Builder: Attributes app](https://www.mage.space/apps/character-builder-attributes) as a skill: the same attributes, prompt and models, run through the Mage connector.
 
 ## Before you start
 

@@ -19,7 +19,7 @@ metadata:
 
 # Mage Outfit Swap
 
-Dress the person in one image in the outfit from another, keeping their identity, pose, and background. This is the [Outfit Swap app](https://www.mage.space/apps/outfit-swap) as a skill: the same prompt, models, and defaults, run through the Mage connector.
+Dress the person in one image in the outfit from another, keeping their identity, pose, and background. This is the [Outfit Swap app](https://www.mage.space/apps/outfit-swap) as a skill: the same prompt and models, run through the Mage connector.
 
 ## Before you start
 

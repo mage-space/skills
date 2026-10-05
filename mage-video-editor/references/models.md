@@ -1,11 +1,11 @@
 # Models
 
-The app's model picker, in the connector's names. The default is Lemon at `480p`. Switch only when the user asks for a model, a higher resolution, or a lower price, and say what it costs first.
+The app's model picker, in the connector's names. The default is Cherry 2 Pro at `480p`. When the user asks for another model, use it; otherwise switch only when the clip doesn't fit Cherry 2 Pro's limits or the user wants a lower price, and say what it costs first.
 
 | Model | `architecture` | `model_id` | Clip field | Source clip | Output settings | Notes |
 |---|---|---|---|---|---|---|
-| Lemon | `lemon` | `lemon` | `videos` (a list of one) | 1–15 s | `resolution` `480p`/`720p`/`1080p`, `duration`, `aspect_ratio` | Clip length + `duration` ≤ 30 s. The clip's seconds bill like output seconds. |
 | Cherry 2 Pro | `cherry` | `cherry-2-pro` | `videos` (a list of one) | 4–30 s | `resolution` `480p`/`720p`/`1080p` only | Leave `duration` and `aspect_ratio` out: the output follows the clip. Uses the wrapped prompt. |
+| Lemon | `lemon` | `lemon` | `videos` (a list of one) | 1–15 s | `resolution` `480p`/`720p`/`1080p`, `duration`, `aspect_ratio` | Clip length + `duration` ≤ 30 s. The clip's seconds bill like output seconds. |
 | Cherry Pro | `cherry` | `cherry-pro` | `videos` (a list of one) | 2–15 s | `resolution` up to `4k`, `duration`, `aspect_ratio` | Uses the wrapped prompt. |
 | Cherry | `cherry` | `cherry` | `videos` (a list of one) | 2–15 s | `resolution` `480p`/`720p`, `duration`, `aspect_ratio` | Uses the wrapped prompt. |
 | Cherry Mini | `cherry` | `cherry-mini` | `videos` (a list of one) | 2–15 s | `resolution` `480p`/`720p`, `duration`, `aspect_ratio` | The cheapest Cherry. Uses the wrapped prompt. |
@@ -23,11 +23,12 @@ The app's model picker, in the connector's names. The default is Lemon at `480p`
 - **`use_character_voices: false`** on Lemon, every Cherry model, Plum, and Plum Max, as the app sends it. Berry and Grok Video don't take the field.
 - **References** (up to 2 references): an image goes in `image`, and a second in `additional_images`; a saved character is mentioned as `@handle` in the prompt instead and takes no image field. Grok Video takes none.
 - **Which model a name means:** "Cherry" alone is `cherry`; "Cherry 2 Pro", "Cherry Pro", and "Cherry Mini" are their own ids. "Plum" alone is `plum`.
+- **Models with no fixed wrapper:** every model outside the Cherry line gets the instruction alone.
 - **Opt-in models:** Plum, Plum Max, Berry, and Grok Video run only when the user asks for them by name.
 
 ## The wrapped prompt (Cherry models only)
 
-On any Cherry model, the app wraps the instruction in this before sending it. Send it the same way, with the instruction in the slot:
+On any Cherry model, including the default, the app wraps the instruction in this before sending it. Send it the same way, with the instruction in the slot:
 
 ```
 Use the provided reference video as the source of truth. Recreate its visual content as closely and faithfully as possible from beginning to end.

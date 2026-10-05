@@ -19,7 +19,7 @@ metadata:
 
 # Mage Character Swap
 
-Replace the subject of an image with a different character, keeping the pose, action, expression, and scene. This is the [Character Swap app](https://www.mage.space/apps/character-swap) as a skill: the same prompt, models, and defaults, run through the Mage connector.
+Replace the subject of an image with a different character, keeping the pose, action, expression, and scene. This is the [Character Swap app](https://www.mage.space/apps/character-swap) as a skill: the same prompt and models, run through the Mage connector.
 
 ## Before you start
 

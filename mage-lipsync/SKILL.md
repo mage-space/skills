@@ -5,13 +5,13 @@ description: |
   movements sync to the audio with natural expressions, and the look, framing,
   and setting of the image stay. Takes a portrait or a saved character, plus a
   voice clip of up to 15 seconds (or generates one with Seed Audio). The
-  Lipsync app as a skill, on Plum by default. Use when: "lip sync", "lipsync",
-  "make this photo talk", "make her say this audio", "talking head from this
-  image", "animate this portrait to my voiceover", "give my character a voice
-  and make them speak". NOT for: characters singing and dancing to music
-  (mage-music-video), a spokesperson product video (mage-ugc-video), dubbing
-  or editing an existing video (mage-video-editor), or putting words in a real
-  person's mouth without their consent.
+  Lipsync app as a skill, on Cherry 2 Pro by default. Use when: "lip sync",
+  "lipsync", "make this photo talk", "make her say this audio", "talking head
+  from this image", "animate this portrait to my voiceover", "give my
+  character a voice and make them speak". NOT for: characters singing and
+  dancing to music (mage-music-video), a spokesperson product video
+  (mage-ugc-video), dubbing or editing an existing video (mage-video-editor),
+  or putting words in a real person's mouth without their consent.
 license: MIT
 compatibility: Requires the Mage connector (https://mcp.mage.space/mcp) and a Mage account with Gems.
 metadata:
@@ -21,7 +21,7 @@ metadata:
 
 # Mage Lipsync
 
-Turn one image and one audio clip into a talking video: the subject's mouth follows the audio, and everything else about the image holds. This is the [Lipsync app](https://www.mage.space/apps/lipsync) as a skill: the same prompt, models, and defaults, run through the Mage connector.
+Turn one image and one audio clip into a talking video: the subject's mouth follows the audio, and everything else about the image holds. This is the [Lipsync app](https://www.mage.space/apps/lipsync) as a skill: the same prompt and models, run through the Mage connector.
 
 ## Before you start
 
@@ -72,23 +72,21 @@ The app attaches the character and the audio directly. The connector attaches th
 
 ## Settings
 
-The app's defaults:
-
-- Model: Plum (`plum`, `model_id: "plum"`). Plum is an opt-in model, so name it in the quote; Lemon is the cheaper choice the app also offers.
-- `resolution`: `768P`.
-- `duration`: the shortest option that covers the audio. Plum's start at `"4"`.
+- Model: Cherry 2 Pro (`cherry`, `model_id: "cherry-2-pro"`), Mage's default for video. When the user asks for another model, use it.
+- `resolution`: `480p`, the cheapest. Offer `720p` or `1080p` with the price when the user wants a final.
+- `duration`: the shortest option that covers the audio: `"4"`, `"5"`, `"8"`, `"10"`, or `"15"`.
 - `aspect_ratio`: `9:16`, a talking-head framing.
 - `use_character_voices: false`, so the chosen audio is the only voice.
 - An image subject goes in `image`, not `first_image` (Blueberry is the one exception: see the reference). A saved character is a mention only.
 
-Other models the app offers (Plum Max, Lemon, the Cherry line, Blueberry, Blueberry 2): `references/models.md`.
+Other models the app offers (Lemon, the other Cherry models, Plum, Plum Max, Blueberry, Blueberry 2): `references/models.md`.
 
 ## Run
 
 ```json
 {
-  "model_id": "plum",
-  "resolution": "768P",
+  "model_id": "cherry-2-pro",
+  "resolution": "480p",
   "duration": "<covers the audio>",
   "aspect_ratio": "9:16",
   "use_character_voices": false,

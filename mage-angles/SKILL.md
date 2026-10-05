@@ -20,7 +20,7 @@ metadata:
 
 # Mage Angles
 
-Regenerate an image from a different camera position: same subject, pose, light, and scene, new viewpoint. This is the [Angles app](https://www.mage.space/apps/angles) as a skill: the same angle grid, prompt, models, and defaults, run through the Mage connector.
+Regenerate an image from a different camera position: same subject, pose, light, and scene, new viewpoint. This is the [Angles app](https://www.mage.space/apps/angles) as a skill: the same angle grid, prompt and models, run through the Mage connector.
 
 ## Before you start
 

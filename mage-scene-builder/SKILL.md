@@ -5,13 +5,13 @@ description: |
   saved @handles, plus a ready-made multi-shot scene (boxing match, wedding,
   dinner date, dance battle, kissing, mafia meeting, late night drive, beach
   episode, morning together) or the user's own prompt, with both identities
-  kept in every shot. The Scene Builder app as a skill, on Cherry by default.
-  Use when: "scene builder", "a scene with these two characters", "make these
-  two have dinner", "put @a and @b in a boxing match", "two-character video",
-  "dialogue scene between my characters", "a wedding video of these two".
-  NOT for: one character alone (mage-generate), a music performance
-  (mage-music-video), a talking head (mage-lipsync), product videos
-  (mage-ugc-video), or real people without their consent.
+  kept in every shot. The Scene Builder app as a skill, on Cherry 2 Pro by
+  default. Use when: "scene builder", "a scene with these two characters",
+  "make these two have dinner", "put @a and @b in a boxing match",
+  "two-character video", "dialogue scene between my characters", "a wedding
+  video of these two". NOT for: one character alone (mage-generate), a music
+  performance (mage-music-video), a talking head (mage-lipsync), product
+  videos (mage-ugc-video), or real people without their consent.
 license: MIT
 compatibility: Requires the Mage connector (https://mcp.mage.space/mcp) and a Mage account with Gems.
 metadata:
@@ -21,7 +21,7 @@ metadata:
 
 # Mage Scene Builder
 
-Give it two characters and a scene, and get a short video of them together, each one recognizable. This is the [Scene Builder app](https://www.mage.space/apps/scene-builder) as a skill: the same presets, prompt template, models, and defaults, run through the Mage connector.
+Give it two characters and a scene, and get a short video of them together, each one recognizable. This is the [Scene Builder app](https://www.mage.space/apps/scene-builder) as a skill: the same presets, prompt template and models, run through the Mage connector.
 
 ## Before you start
 
@@ -52,13 +52,11 @@ Presets: Boxing Match, Wedding, Dinner Date, Dance Battle, Kissing, Mafia Meetin
 
 ## Settings
 
-The app's defaults:
-
-- Model: Cherry (`cherry`, `model_id: "cherry"`).
+- Model: Cherry 2 Pro (`cherry`, `model_id: "cherry-2-pro"`), Mage's default for video. When the user asks for another model, use it.
 - `resolution`: `480p`. `duration`: `"4"`. `aspect_ratio`: `16:9`.
 - Character images, in order, go in `image` and `additional_images`. Saved characters are mentions only and take no image field.
 
-Four seconds is short for a four-shot preset, so the model compresses it. Offer `8`, `10`, or `15` seconds with the price when the user wants the whole scene to play out. Other models the app offers (Cherry Pro, Cherry 2 Pro, Raspberry, Lemon): `references/models.md`.
+Four seconds is short for a four-shot preset, so the model compresses it. Offer `8`, `10`, or `15` seconds with the price when the user wants the whole scene to play out. Other models the app offers (Cherry Pro, Cherry, Raspberry, Lemon): `references/models.md`.
 
 ## Run
 
@@ -66,7 +64,7 @@ Two images:
 
 ```json
 {
-  "model_id": "cherry",
+  "model_id": "cherry-2-pro",
   "resolution": "480p",
   "duration": "4",
   "aspect_ratio": "16:9",
@@ -88,7 +86,7 @@ With one saved character and one image, send only the image, in `image`. With tw
 
 ## Check and deliver
 
-Deliver the link with the model, resolution, length, and Gems. Two is the limit. Physical interaction between two generated people is the hardest case in video, so expect more retries than a single-subject clip: if faces merge or limbs distort, offer one retry or Cherry 2 Pro (quote it first).
+Deliver the link with the model, resolution, length, and Gems. Two is the limit. Physical interaction between two generated people is the hardest case in video, so expect more retries than a single-subject clip: if faces merge or limbs distort, offer one retry.
 
 ## Errors
 

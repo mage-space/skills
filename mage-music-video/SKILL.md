@@ -4,14 +4,14 @@ description: |
   Make saved characters perform a music video to an audio track with Mage: one
   to three performers sing and dance in sync with up to 15 seconds of music,
   with cinematic camera work and optional reference images for the setting or
-  look. The Music Video app as a skill, on Plum by default. Use when: "music
-  video", "make my character sing this song", "make them dance to this track",
-  "performance video for my song", "my AI artist performing", "a band of my
-  characters playing this", "turn this track into a video". NOT for: a single
-  subject speaking a voice clip (mage-lipsync), copying a specific dance from
-  a reference video (mage-video-character-swap on that video), a narrated
-  explainer (mage-faceless-video), making the music itself (mage-generate), or
-  music the user has no right to use.
+  look. The Music Video app as a skill, on Cherry 2 Pro by default. Use when:
+  "music video", "make my character sing this song", "make them dance to this
+  track", "performance video for my song", "my AI artist performing", "a band
+  of my characters playing this", "turn this track into a video". NOT for: a
+  single subject speaking a voice clip (mage-lipsync), copying a specific
+  dance from a reference video (mage-video-character-swap on that video), a
+  narrated explainer (mage-faceless-video), making the music itself
+  (mage-generate), or music the user has no right to use.
 license: MIT
 compatibility: Requires the Mage connector (https://mcp.mage.space/mcp) and a Mage account with Gems.
 metadata:
@@ -21,7 +21,7 @@ metadata:
 
 # Mage Music Video
 
-Put one to three characters on screen performing a track: singing, dancing, and moving with the music. This is the [Music Video app](https://www.mage.space/apps/music-video) as a skill: the same prompt, models, and defaults, run through the Mage connector.
+Put one to three characters on screen performing a track: singing, dancing, and moving with the music. This is the [Music Video app](https://www.mage.space/apps/music-video) as a skill: the same prompt and models, run through the Mage connector.
 
 ## Before you start
 
@@ -72,23 +72,21 @@ The app attaches the characters and the track directly. The connector attaches t
 
 ## Settings
 
-The app's defaults:
-
-- Model: Plum (`plum`, `model_id: "plum"`). Plum is an opt-in model, so name it in the quote; Lemon is the cheaper choice the app also offers.
-- `resolution`: `768P`.
-- `duration`: the shortest option that covers the track. Plum's start at `"4"`.
+- Model: Cherry 2 Pro (`cherry`, `model_id: "cherry-2-pro"`), Mage's default for video. When the user asks for another model, use it.
+- `resolution`: `480p`, the cheapest. Offer `720p` or `1080p` with the price when the user wants a final.
+- `duration`: the shortest option that covers the track: `"4"`, `"5"`, `"8"`, `"10"`, or `"15"`.
 - `aspect_ratio`: `9:16`, a short-form vertical clip.
 - `use_character_voices: false`, so the track is the only audio.
 - Reference images go in `image` (the first) and `additional_images` (the rest), never `first_image`. Performers are mentions only.
 
-Other models the app offers (Plum Max, Lemon, the Cherry line): `references/models.md`.
+Other models the app offers (Lemon, the other Cherry models, Plum, Plum Max): `references/models.md`.
 
 ## Run
 
 ```json
 {
-  "model_id": "plum",
-  "resolution": "768P",
+  "model_id": "cherry-2-pro",
+  "resolution": "480p",
   "duration": "<covers the track>",
   "aspect_ratio": "9:16",
   "use_character_voices": false,

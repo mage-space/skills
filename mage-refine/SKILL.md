@@ -19,7 +19,7 @@ metadata:
 
 # Mage Refine
 
-Improve an image without recomposing it: fix eyes, fix hands, add detail, or follow one instruction of the user's. This is the [Refine app](https://www.mage.space/apps/refine) as a skill: the same presets, models, and defaults, run through the Mage connector.
+Improve an image without recomposing it: fix eyes, fix hands, add detail, or follow one instruction of the user's. This is the [Refine app](https://www.mage.space/apps/refine) as a skill: the same presets and models, run through the Mage connector.
 
 ## Before you start
 
