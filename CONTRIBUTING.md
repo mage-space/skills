@@ -11,7 +11,7 @@ pip install pyyaml
 python3 scripts/validate.py
 ```
 
-CI runs it on every pull request. Test a changed skill by installing your checkout (`./setup`) and running a real request through an agent with the Mage connector; generations cost Gems, so use cheap models (Mango 3S, GPT Image 2.5 Flare, Cherry Mini) while iterating.
+CI runs it on every pull request. Test a changed skill by installing your checkout (`./setup`) and running a real request through an agent with the Mage connector; generations cost Gems, so use cheap models (Mango 3 Turbo, GPT Image 2.5 Flare, Cherry Mini) while iterating.
 
 Use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages and pull request titles (`feat(product-photoshoot): add a seasonal mode`, `fix(generate): …`, `docs: …`); releases and the changelog are built from them. Pull requests are squash-merged.
 

@@ -22,7 +22,24 @@
         "mage-ad-localizer/SKILL.md",
         "mage-ugc-video/SKILL.md",
         "mage-faceless-video/SKILL.md",
-        "mage-youtube-thumbnail/SKILL.md"
+        "mage-youtube-thumbnail/SKILL.md",
+        "mage-face-swap/SKILL.md",
+        "mage-character-swap/SKILL.md",
+        "mage-outfit-swap/SKILL.md",
+        "mage-inpaint/SKILL.md",
+        "mage-refine/SKILL.md",
+        "mage-relight/SKILL.md",
+        "mage-angles/SKILL.md",
+        "mage-character-builder/SKILL.md",
+        "mage-character-muse/SKILL.md",
+        "mage-character-sheet/SKILL.md",
+        "mage-recreate/SKILL.md",
+        "mage-video-editor/SKILL.md",
+        "mage-video-face-swap/SKILL.md",
+        "mage-video-character-swap/SKILL.md",
+        "mage-lipsync/SKILL.md",
+        "mage-music-video/SKILL.md",
+        "mage-scene-builder/SKILL.md"
       ]
     }
   }
