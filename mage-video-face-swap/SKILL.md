@@ -4,14 +4,13 @@ description: |
   Swap a face into a video with Mage: the new identity (face, hair, skin,
   neck) is applied in every frame while the original pose, motion,
   expressions, lip movements, clothing, and background stay. The Video Face
-  Swap app as a skill, on Cherry 2 Pro by default. Use when: "video face
-  swap", "swap the face in this video", "put my character's face on this
-  clip", "put my face in this video", "replace her face in the footage", "the
-  face drifted in this clip, fix it". NOT for: face swaps in a still image
-  (mage-face-swap), replacing the whole person with body and outfit
-  (mage-video-character-swap), other video edits (mage-video-editor), lip sync
-  to audio (mage-lipsync), or putting a real person into a video without their
-  consent.
+  Swap app as a skill, on Lemon by default. Use when: "video face swap", "swap
+  the face in this video", "put my character's face on this clip", "put my
+  face in this video", "replace her face in the footage", "the face drifted in
+  this clip, fix it". NOT for: face swaps in a still image (mage-face-swap),
+  replacing the whole person with body and outfit (mage-video-character-swap),
+  other video edits (mage-video-editor), lip sync to audio (mage-lipsync), or
+  putting a real person into a video without their consent.
 license: MIT
 compatibility: Requires the Mage connector (https://mcp.mage.space/mcp) and a Mage account with Gems.
 metadata:
@@ -41,12 +40,12 @@ Replace the face and hair of the person in a video with another identity, keepin
 
 Both are required. Ask for whichever is missing.
 
-1. **The video:** one clip, MP4, MOV, or WebM, with the person clearly visible. 4–30 seconds on the default model; other models differ (`references/models.md`).
+1. **The video:** one clip, MP4, MOV, or WebM, with the person clearly visible. 1–15 seconds on the default model; other models differ (`references/models.md`).
 2. **The face to swap in:** a clear, front-facing image. Either an image link, or a saved character by `@handle` (`list_characters` shows them; build one with `mage-character-builder` or save one with `mage-characters`).
 
 ## Prompt
 
-The app's swap prompt:
+Send exactly this:
 
 ```
 Replace the face and hair of the person in the video with the identity from the reference image.
@@ -60,45 +59,34 @@ Keep skin tone, texture, and color fully harmonized across the entire head and n
 Seamlessly blend edges between the replaced area and the rest of each frame. Keep the background, clothing, other subjects, and all remaining visual content identical to the source video.
 ```
 
-On a Cherry model, which is the default, the app puts that whole prompt inside this wrapper, in the slot. Send it the same way:
-
-```
-Use the provided reference video as the source of truth. Recreate its visual content as closely and faithfully as possible from beginning to end.
-
-Preserve the shot sequence, timing, camera angle, camera movement, framing, composition, subject identity, poses, actions, body movement, facial expressions, environment, background, lighting, color grading, and visual style of the reference video.
-
-Apply only the following requested change:
-<the change>
-
-Make the minimum changes necessary to fulfill the request. Everything not explicitly mentioned in the requested change must remain consistent with the reference video. Do not restage the scene, reinterpret the action, alter the camera or motion, add or remove unrelated subjects or objects, or introduce unrelated visual changes unless the request explicitly requires it.
-```
-
-- **Image reference:** send the wrapped prompt, with the image in `image`.
-- **Saved character:** don't send `image`. Add one line after the whole wrapped prompt, separated by a blank line, so Mage attaches the character: `Reference: @handle`. The prompt still says "the reference image"; the character's image is that reference, as in the app.
-- **Models outside the Cherry line** get the swap prompt alone, without the wrapper.
+- **Image reference:** send the prompt as it is, with the image in `image`.
+- **Saved character:** don't send `image`. Add one line after the prompt, separated by a blank line, so Mage attaches the character: `Reference: @handle`. The prompt still says "the reference image"; the character's image is that reference, as in the app.
+- **Cherry models:** the app wraps this prompt before sending it, and the `Reference:` line goes after the wrapper. See `references/models.md`.
 
 ## Settings
 
-- Model: Cherry 2 Pro (`cherry`, `model_id: "cherry-2-pro"`), Mage's default for video. When the user asks for another model, use it.
+- Model: Lemon (`lemon`, `model_id: "lemon"`). When the user asks for another model, use it. Cherry 2 Pro, Mage's usual default for video, can't edit a source video through the connector today (see `references/models.md`), so this skill starts on Lemon.
 - `resolution`: `480p`, the cheapest. Offer `720p` or `1080p` with the price when the user wants a final.
-- Leave `duration` and `aspect_ratio` out: on Cherry 2 Pro the output follows the clip's length and shape.
+- `duration`: the clip's length rounded to the nearest whole second (Lemon takes any whole second from `"2"` to `"30"`).
+- `aspect_ratio`: the option closest to the clip's shape (`16:9`, `4:3`, `1:1`, `3:4`, `9:16`).
 - `use_character_voices: false`.
-- The clip must be 4 to 30 seconds long. For a shorter clip, say so and offer Lemon, which takes 1 to 15 seconds.
 
-Other models the app offers (Lemon, the other Cherry models, Plum, Plum Max, Berry), with their clip limits, fields, and settings: `references/models.md`. Read it before using any model but Cherry 2 Pro.
+Other models the app offers (the Cherry line, Plum, Plum Max, Berry), with their clip limits, fields, settings, and the wrapped prompt Cherry needs: `references/models.md`. Read it before using any model but Lemon.
 
 ## Run
 
 ```json
 {
-  "model_id": "cherry-2-pro",
+  "model_id": "lemon",
   "resolution": "480p",
+  "duration": "<covers the clip>",
+  "aspect_ratio": "<closest to the clip>",
   "videos": [
     "<the clip>"
   ],
   "image": "<the reference image>",
   "use_character_voices": false,
-  "prompt": "<the wrapped prompt>"
+  "prompt": "<the prompt above>"
 }
 ```
 
