@@ -4,7 +4,7 @@ description: |
   Replace the whole person in a video with a different character using Mage:
   face, hair, body, and the complete outfit change in every frame while the
   original motion, expressions, camera, and background stay. The Video
-  Character Swap app as a skill, on Lemon by default. Use when: "video
+  Character Swap app as a skill, on Cherry 2 Pro by default. Use when: "video
   character swap", "replace the person in this video with my character", "put
   my character into this footage", "swap the actor in this clip", "same dance,
   different person", "make this video star @handle". NOT for: changing only
@@ -41,12 +41,12 @@ Replace the entire person in a video with another character, body and styling in
 
 Both are required. Ask for whichever is missing.
 
-1. **The video:** one clip, MP4, MOV, or WebM, with the person clearly visible. 1–15 seconds on the default model; other models differ (`references/models.md`).
+1. **The video:** one clip, MP4, MOV, or WebM, with the person clearly visible. 4–30 seconds on the default model; other models differ (`references/models.md`).
 2. **The character to swap in:** an image showing the character's face, body, and outfit; a full-body image works best. Either an image link, or a saved character by `@handle` (`list_characters` shows them; build one with `mage-character-builder` or save one with `mage-characters`).
 
 ## Prompt
 
-Send exactly this:
+The app's swap prompt:
 
 ```
 Replace the entire person in the video with the character from the reference image.
@@ -60,34 +60,45 @@ Match the lighting direction, shadows, motion blur, and color grading of the vid
 Seamlessly blend the replaced character into each frame. Keep the background, other subjects, and all remaining visual content identical to the source video.
 ```
 
-- **Image reference:** send the prompt as it is, with the image in `image`.
-- **Saved character:** don't send `image`. Add one line after the prompt, separated by a blank line, so Mage attaches the character: `Reference: @handle`. The prompt still says "the reference image"; the character's image is that reference, as in the app.
-- **Cherry models:** the app wraps this prompt before sending it, and the `Reference:` line goes after the wrapper. See `references/models.md`.
+On a Cherry model, which is the default, the app puts that whole prompt inside this wrapper, in the slot. Send it the same way:
+
+```
+Use the provided reference video as the source of truth. Recreate its visual content as closely and faithfully as possible from beginning to end.
+
+Preserve the shot sequence, timing, camera angle, camera movement, framing, composition, subject identity, poses, actions, body movement, facial expressions, environment, background, lighting, color grading, and visual style of the reference video.
+
+Apply only the following requested change:
+<the change>
+
+Make the minimum changes necessary to fulfill the request. Everything not explicitly mentioned in the requested change must remain consistent with the reference video. Do not restage the scene, reinterpret the action, alter the camera or motion, add or remove unrelated subjects or objects, or introduce unrelated visual changes unless the request explicitly requires it.
+```
+
+- **Image reference:** send the wrapped prompt, with the image in `image`.
+- **Saved character:** don't send `image`. Add one line after the whole wrapped prompt, separated by a blank line, so Mage attaches the character: `Reference: @handle`. The prompt still says "the reference image"; the character's image is that reference, as in the app.
+- **Models outside the Cherry line** get the swap prompt alone, without the wrapper.
 
 ## Settings
 
-- Model: Lemon (`lemon`, `model_id: "lemon"`). When the user asks for another model, use it. Cherry 2 Pro, Mage's usual default for video, can't edit a source video through the connector today (see `references/models.md`), so this skill starts on Lemon.
+- Model: Cherry 2 Pro (`cherry`, `model_id: "cherry-2-pro"`), Mage's default for video. When the user asks for another model, use it.
 - `resolution`: `480p`, the cheapest. Offer `720p` or `1080p` with the price when the user wants a final.
-- `duration`: the clip's length rounded to the nearest whole second (Lemon takes any whole second from `"2"` to `"30"`).
-- `aspect_ratio`: the option closest to the clip's shape (`16:9`, `4:3`, `1:1`, `3:4`, `9:16`).
+- Leave `duration` and `aspect_ratio` out: on Cherry 2 Pro the output follows the clip's length and shape.
 - `use_character_voices: false`.
+- The clip must be 4 to 30 seconds long. For a shorter clip, say so and offer Lemon, which takes 1 to 15 seconds.
 
-Other models the app offers (the Cherry line, Plum, Plum Max, Berry), with their clip limits, fields, settings, and the wrapped prompt Cherry needs: `references/models.md`. Read it before using any model but Lemon.
+Other models the app offers (Lemon, the other Cherry models, Plum, Plum Max, Berry), with their clip limits, fields, and settings: `references/models.md`. Read it before using any model but Cherry 2 Pro.
 
 ## Run
 
 ```json
 {
-  "model_id": "lemon",
+  "model_id": "cherry-2-pro",
   "resolution": "480p",
-  "duration": "<covers the clip>",
-  "aspect_ratio": "<closest to the clip>",
   "videos": [
     "<the clip>"
   ],
   "image": "<the reference image>",
   "use_character_voices": false,
-  "prompt": "<the prompt above>"
+  "prompt": "<the wrapped prompt>"
 }
 ```
 

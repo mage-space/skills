@@ -4,14 +4,15 @@ description: |
   Edit an existing video with a prompt using Mage: describe the change and it
   is applied across the clip while the motion, camera, timing, and composition
   stay, with optional reference images or characters for a specific subject,
-  object, or look. The Video Editor app as a skill, on Lemon by default.
-  Use when: "edit this video", "change her jacket to red in this clip", "make
-  this video look like anime", "replace the background of this clip", "turn
-  day into night in this video", "add snow to this footage", "restyle this
-  clip", "put this product in the video". NOT for: swapping a face or a whole
-  person in a video (mage-video-face-swap, mage-video-character-swap), making
-  a video from nothing or from a still (mage-generate), lip sync
-  (mage-lipsync), or cutting, trimming, and timeline work.
+  object, or look. The Video Editor app as a skill, on Cherry 2 Pro by
+  default. Use when: "edit this video", "change her jacket to red in this
+  clip", "make this video look like anime", "replace the background of this
+  clip", "turn day into night in this video", "add snow to this footage",
+  "restyle this clip", "put this product in the video". NOT for: swapping a
+  face or a whole person in a video (mage-video-face-swap,
+  mage-video-character-swap), making a video from nothing or from a still
+  (mage-generate), lip sync (mage-lipsync), or cutting, trimming, and timeline
+  work.
 license: MIT
 compatibility: Requires the Mage connector (https://mcp.mage.space/mcp) and a Mage account with Gems.
 metadata:
@@ -35,35 +36,46 @@ Change what a video shows without re-shooting it: one instruction, applied acros
 1. Don't ask for what the request already gives. Ask for everything that is missing in one compact question, then wait.
 2. Send the app's prompt below word for word. Fill in only the marked slots; don't rewrite, translate, or add to it.
 3. Always quote the model and the price in Gems and wait for a yes before generating.
-4. The user's instruction is the prompt. Don't expand or restyle it; on Cherry models it goes inside the app's wrapper, unchanged.
+4. The user's instruction is the change. Don't expand or restyle it; it goes inside the app's wrapper, unchanged.
 5. Deliver the link with a one-line label (model, size or length, Gems spent). No prompts, ids, or JSON. Reply in the user's language. Links last 30 days.
 
 ## Inputs
 
-1. **The video:** one clip, MP4, MOV, or WebM. 1–15 seconds on the default model; other models differ (`references/models.md`).
+1. **The video:** one clip, MP4, MOV, or WebM. 4–30 seconds on the default model; other models differ (`references/models.md`).
 2. **The change,** in the user's words: their instruction as a sentence of its own, without the link or the request around it ("In this clip <link>, change her jacket to red" is sent as "Change her jacket to red."). Don't add to it. If it is vague ("make it better"), ask what should change.
 3. **References (optional, up to 2):** images of a specific subject, object, or look the change involves, or saved characters by `@handle`. Mention each `@handle` in the instruction where it belongs ("replace the dog with @rex"), and call a reference image "the reference image" ("make her wear the jacket from the reference image").
 
 ## Settings
 
-- Model: Lemon (`lemon`, `model_id: "lemon"`). When the user asks for another model, use it. Cherry 2 Pro, Mage's usual default for video, can't edit a source video through the connector today (see `references/models.md`), so this skill starts on Lemon.
+- Model: Cherry 2 Pro (`cherry`, `model_id: "cherry-2-pro"`), Mage's default for video. When the user asks for another model, use it.
 - `resolution`: `480p`, the cheapest. Offer `720p` or `1080p` with the price when the user wants a final.
-- `duration`: the clip's length rounded to the nearest whole second (Lemon takes any whole second from `"2"` to `"30"`).
-- `aspect_ratio`: the option closest to the clip's shape (`16:9`, `4:3`, `1:1`, `3:4`, `9:16`).
+- Leave `duration` and `aspect_ratio` out: on Cherry 2 Pro the output follows the clip's length and shape.
 - `use_character_voices: false`.
+- The clip must be 4 to 30 seconds long. For a shorter clip, say so and offer Lemon, which takes 1 to 15 seconds.
 
-Other models the app offers (the Cherry line, Plum, Plum Max, Berry, Grok Video), with their clip limits, fields, settings, and the wrapped prompt Cherry needs: `references/models.md`. Read it before using any model but Lemon.
+Other models the app offers (Lemon, the other Cherry models, Plum, Plum Max, Berry, Grok Video), with their clip limits, fields, and settings: `references/models.md`. Read it before using any model but Cherry 2 Pro.
 
 ## Run
 
-On Lemon the prompt is the user's instruction alone:
+On a Cherry model the app wraps the instruction before sending it. Send exactly this, with the instruction in the slot:
+
+```
+Use the provided reference video as the source of truth. Recreate its visual content as closely and faithfully as possible from beginning to end.
+
+Preserve the shot sequence, timing, camera angle, camera movement, framing, composition, subject identity, poses, actions, body movement, facial expressions, environment, background, lighting, color grading, and visual style of the reference video.
+
+Apply only the following requested change:
+<the change>
+
+Make the minimum changes necessary to fulfill the request. Everything not explicitly mentioned in the requested change must remain consistent with the reference video. Do not restage the scene, reinterpret the action, alter the camera or motion, add or remove unrelated subjects or objects, or introduce unrelated visual changes unless the request explicitly requires it.
+```
+
+Models outside the Cherry line get the instruction alone.
 
 ```json
 {
-  "model_id": "lemon",
+  "model_id": "cherry-2-pro",
   "resolution": "480p",
-  "duration": "<covers the clip>",
-  "aspect_ratio": "<closest to the clip>",
   "videos": [
     "<the clip>"
   ],
@@ -72,7 +84,7 @@ On Lemon the prompt is the user's instruction alone:
     "<optional second reference>"
   ],
   "use_character_voices": false,
-  "prompt": "<the user's instruction>"
+  "prompt": "<the wrapped prompt>"
 }
 ```
 
