@@ -28,6 +28,26 @@ The product photo is the reference for everything, so the bottle looks the same 
 2. `mage-generate`: "@nova reading in a corner cafe; @nova hiking a misty ridge in a red rain jacket; @nova at a night market."
 3. `mage-youtube-thumbnail`: "A thumbnail of @nova for 'I learned to surf in 30 days', shocked, giant wave behind her. Give me three emotions."
 
+## Build a character and put them to work
+
+1. `mage-character-builder`: "Build a character: a woman, long wavy red hair, green eyes, freckles, young adult, streetwear."
+2. `mage-character-muse`: "Same person, but try the Soft and Sharp faces." Pick a take.
+3. `mage-character-sheet`: "Make a character sheet from that one and save it as Nova."
+4. `mage-scene-builder`: "A late night drive with @nova and @kai, 10 seconds."
+5. `mage-lipsync`: "Make @nova say: 'Welcome back to the channel.'"
+
+## Fix and finish a still
+
+1. `mage-refine`: "Fix the hands in this image. <link>"
+2. `mage-inpaint`: "Now remove the coffee cup on the table."
+3. `mage-relight`: "Give it soft, warm light from the upper left."
+4. `mage-angles`: "And show me the same shot from a front-right three-quarter view."
+
+## Re-cast a clip
+
+1. `mage-video-character-swap`: "Replace the dancer in this clip with @nova. <link>"
+2. `mage-video-editor`: "Now turn the studio into a rooftop at sunset."
+
 ## Costs
 
 Every skill quotes the price in Gems before it runs anything big. Images cost tens to a couple of hundred Gems; video costs thousands, climbing with resolution and length. Draft video with Cherry Mini or Lemon, then render the final on Cherry 2 Pro.

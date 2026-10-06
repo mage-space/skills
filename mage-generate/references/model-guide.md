@@ -7,7 +7,7 @@ Mage names its own models after fruit. Use these names with the user; never gues
 | Model | Architecture / `model_id` | Pick it for | Watch out for |
 |---|---|---|---|
 | Mango 3 | `mango` / `mango-v3` | The default. Exact instructions, the same character across a set, several references merged into one scene, edits that keep the rest of the image in place. Up to 10 reference images. | The priciest Mango; 1K or 2K only. |
-| Mango 3S | `mango` / `mango-v3s` | Cheaper, faster Mango with characters and references; 3K output. | Slightly less precise than Mango 3. |
+| Mango 3S | `mango` / `mango-v3s` | 3K output, with characters and references. Use it only when the user wants 3K. | Slightly less precise than Mango 3. For speed or price, use Mango 3 Turbo instead. |
 | Mango 2 | `mango` / `mango-v2` | 4K stills. | Previous generation. |
 | Guava 2 Pro | `guava` / `guava-2-pro` | Photoreal portraits, fashion, editorial, product shots that pass for photographs; skin, fabric, and hair texture. | At most 3 reference images; a vague prompt gives a generic studio look. |
 | Guava 2 | `guava` / `guava-2` | Cheaper photoreal iterations. | Guava 2 Pro makes the better final. |

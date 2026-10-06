@@ -6,14 +6,15 @@ description: |
   and wait for the result. Defaults: Mango 3 for images, Cherry 2 Pro for
   video, Seed Audio for audio. Use when: "generate an image", "make a
   picture", "make a video", "animate this image", "image to video", "edit
-  this image", "change the background", "restyle this video", "make music",
-  "sound effect", "voiceover", "make it with Mage", or any other request to
-  create media with Mage. Chain with mage-characters to keep a person
-  consistent. NOT for: product photoshoots (use mage-product-photoshoot),
-  marketplace listing images (mage-marketplace-cards), ad variants, resizes,
-  or translations (mage-ad-multiplier, mage-ad-resizer, mage-ad-localizer),
-  UGC product videos (mage-ugc-video), narrated faceless videos
-  (mage-faceless-video), or YouTube thumbnails (mage-youtube-thumbnail).
+  this image", "change the background", "make music", "sound effect",
+  "voiceover", "make it with Mage", or any other request to create media with
+  Mage. Chain with mage-characters to keep a person consistent. NOT for:
+  product photoshoots (use mage-product-photoshoot), marketplace listing
+  images (mage-marketplace-cards), ad variants, resizes, or translations
+  (mage-ad-multiplier, mage-ad-resizer, mage-ad-localizer), UGC product videos
+  (mage-ugc-video), narrated faceless videos (mage-faceless-video), YouTube
+  thumbnails (mage-youtube-thumbnail), or swaps, inpainting, relighting, lip
+  sync, and edits of an existing video (the mage-* skill named for each).
 license: MIT
 compatibility: Requires the Mage connector (https://mcp.mage.space/mcp) and a Mage account with Gems.
 metadata:
@@ -56,7 +57,7 @@ Switch when the request calls for it:
 
 - **Text in the image** (posters, memes, comics, infographics, UI) → GPT Image 2.5 Flare (`gpt_image_2`, `gpt-image-2.5-flare`). Cheap at its default quality. OpenAI's safety filter applies.
 - **Photoreal people and products** (portraits, fashion, skin and fabric texture) → Guava 2 Pro (`guava`, `guava-2-pro`). Up to 3 reference images. Name the lens and the light.
-- **3K, or a cheaper Mango** → Mango 3S (`mango-v3s`). **4K stills** → Mango 2 (`mango-v2`).
+- **A faster, cheaper Mango** → Mango 3 Turbo (`mango-v3-turbo`). **3K stills** → Mango 3S (`mango-v3s`), only for 3K. **4K stills** → Mango 2 (`mango-v2`).
 - **A first or last frame, or cheaper video with sound** → Lemon (`lemon`, 2–30 s). Frames and reference images cannot be combined.
 - **4K video** → Cherry Pro (`cherry-pro`). **Cheap video drafts** → Cherry Mini (`cherry-mini`).
 - **Any other model** only when the user names it. `list_models` with `include_opt_in: true` lists them.

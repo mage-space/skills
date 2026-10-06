@@ -3,7 +3,7 @@
   "name": "mage",
   "displayName": "Mage",
   "version": "0.0.0",
-  "description": "Mage skills for images, video, and audio through the Mage connector: generation, consistent characters, product photoshoots, marketplace listings, ad variants, UGC and faceless videos, and YouTube thumbnails.",
+  "description": "Mage skills for images, video, and audio through the Mage connector: generation, consistent characters, product photoshoots, marketplace listings, ad variants, UGC and faceless videos, YouTube thumbnails, and the Mage apps as skills (swaps, inpaint, relight, angles, character building, lip sync, video editing, scenes).",
   "author": {
     "name": "Mage",
     "email": "mage@mage.space"

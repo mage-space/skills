@@ -1,6 +1,8 @@
 # Install Mage Skills
 
-Ten skills ship in this repository: `mage-generate`, `mage-characters`, `mage-product-photoshoot`, `mage-marketplace-cards`, `mage-ad-multiplier`, `mage-ad-resizer`, `mage-ad-localizer`, `mage-ugc-video`, `mage-faceless-video`, and `mage-youtube-thumbnail`.
+Twenty-seven skills ship in this repository. Ten are creative jobs: `mage-generate`, `mage-characters`, `mage-product-photoshoot`, `mage-marketplace-cards`, `mage-ad-multiplier`, `mage-ad-resizer`, `mage-ad-localizer`, `mage-ugc-video`, `mage-faceless-video`, and `mage-youtube-thumbnail`.
+
+Seventeen are the [Mage apps](https://www.mage.space/apps) as skills: `mage-face-swap`, `mage-character-swap`, `mage-outfit-swap`, `mage-inpaint`, `mage-refine`, `mage-relight`, `mage-angles`, `mage-character-builder`, `mage-character-muse`, `mage-character-sheet`, `mage-recreate`, `mage-video-editor`, `mage-video-face-swap`, `mage-video-character-swap`, `mage-lipsync`, `mage-music-video`, and `mage-scene-builder`.
 
 Every skill needs two things: the **Mage connector** in your agent, and the **skill files**.
 

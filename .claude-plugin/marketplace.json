@@ -8,7 +8,7 @@
     {
       "name": "mage",
       "source": "./",
-      "description": "Mage skills for images, video, and audio: generation, consistent characters, product photoshoots, marketplace listings, ad variants, resizes, and translations, UGC videos, faceless videos, and YouTube thumbnails, through the Mage connector.",
+      "description": "Mage skills for images, video, and audio: generation, consistent characters, product photoshoots, marketplace listings, ad variants, resizes, and translations, UGC videos, faceless videos, YouTube thumbnails, and the Mage apps as skills (swaps, inpaint, relight, angles, character building, lip sync, video editing, scenes), through the Mage connector.",
       "version": "0.0.0",
       "skills": [
         "./mage-generate",
@@ -20,7 +20,24 @@
         "./mage-ad-localizer",
         "./mage-ugc-video",
         "./mage-faceless-video",
-        "./mage-youtube-thumbnail"
+        "./mage-youtube-thumbnail",
+        "./mage-face-swap",
+        "./mage-character-swap",
+        "./mage-outfit-swap",
+        "./mage-inpaint",
+        "./mage-refine",
+        "./mage-relight",
+        "./mage-angles",
+        "./mage-character-builder",
+        "./mage-character-muse",
+        "./mage-character-sheet",
+        "./mage-recreate",
+        "./mage-video-editor",
+        "./mage-video-face-swap",
+        "./mage-video-character-swap",
+        "./mage-lipsync",
+        "./mage-music-video",
+        "./mage-scene-builder"
       ]
     }
   ]
