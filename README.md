@@ -10,6 +10,14 @@ Browse every skill with examples at [mage.space/skills](https://www.mage.space/s
 
 Two steps: connect Mage, then add the skills.
 
+### Plugin connection
+
+The plugin manifest includes all 27 skills and the production Mage MCP server. Compatible plugin hosts, including Claude Code and Grok Build, discover the connection automatically and ask you to sign in to Mage through OAuth. Installing this source does not mean it is listed or approved in a platform’s public directory.
+
+The connector calls `https://mcp.mage.space/mcp`, with sign-in and OAuth token handling at `https://www.mage.space`. It accesses the connected account’s balance, media history, saved creations, characters, and references; it can generate media, manage characters and references, upload files, and cancel requests. Generations spend Gems. It requests no local shell server, lifecycle hooks, or stored API keys. Disconnect it in [Mage’s connected apps](https://www.mage.space/mcp?tab=connected).
+
+Publisher: Ollano Inc. Support: [mage@mage.space](mailto:mage@mage.space). [Privacy policy](https://www.mage.space/privacy-policy) · [Terms](https://www.mage.space/terms-and-conditions).
+
 ### 1. Connect Mage
 
 | Agent | How |
