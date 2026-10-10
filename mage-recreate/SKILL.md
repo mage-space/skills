@@ -25,7 +25,7 @@ Start from a look instead of a description: read a reference image into a prompt
 
 ## Before you start
 
-1. **Mage tools:** `search_creations`, `get_model`, `estimate_cost`, `generate`, and `get_request`. If they are missing, ask the user to connect Mage (Claude: Customize → Connectors → Add custom connector, `https://mcp.mage.space/mcp`; Claude Code: `claude mcp add --transport http mage https://mcp.mage.space/mcp`; others: https://www.mage.space/mcp), then wait.
+1. **Mage tools:** `search_creations`, `get_model`, `estimate_cost`, `generate`, and `get_request`. If they are missing, ask the user to connect Mage (Claude: Customize → Connectors → Add custom connector, `https://mcp.mage.space/mcp`; Claude Code: `/mcp` to sign in if the Mage plugin is installed, otherwise `claude mcp add --transport http mage https://mcp.mage.space/mcp`; others: https://www.mage.space/mcp), then wait.
 2. **You must be able to see the reference.** The prompt comes from looking at the image: an attachment in the chat, a link you can open, or a file on disk. If you can't view images, say so and stop; don't guess from a filename or a caption.
 3. **Rights.** Recreate a look, not a person or a protected work. Don't name real people, living artists, brands, or characters in the prompt.
 

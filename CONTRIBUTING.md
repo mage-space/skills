@@ -42,7 +42,7 @@ metadata:
 ---
 ```
 
-Then add the folder to `.claude-plugin/marketplace.json`, `release-please-config.json` (`extra-files`), and the tables in `README.md`, and run the validator. Keep `SKILL.md` under 300 lines: if removing a section wouldn't stop the agent deciding what to do next, it belongs in `references/`.
+Then add the folder to `.claude-plugin/marketplace.json`, `.claude-plugin/plugin.json`, `release-please-config.json` (`extra-files`), and the tables in `README.md`, and run the validator. Keep `SKILL.md` under 300 lines: if removing a section wouldn't stop the agent deciding what to do next, it belongs in `references/`.
 
 ## Releases
 

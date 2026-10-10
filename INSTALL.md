@@ -44,7 +44,7 @@ Inside Claude Code:
 /plugin install mage@mage
 ```
 
-Skills are then namespaced, for example `/mage:mage-product-photoshoot`.
+The plugin also connects Mage, so skip `claude mcp add` in step 1: run `/mcp`, select the Mage server, and sign in. Skills are then namespaced, for example `/mage:mage-product-photoshoot`.
 
 ### Option 4: claude.ai
 

@@ -8,8 +8,8 @@ and this repository's conventions:
   the naming rules; `description` is at most 1024 characters and names its
   "Use when" triggers and its "NOT for" boundary; `metadata.version` matches VERSION.
 - SKILL.md stays under 500 lines.
-- Every plugin manifest carries the VERSION, and the Claude Code marketplace
-  lists every skill folder.
+- Every plugin manifest carries the VERSION, and the Claude Code marketplace and
+  plugin manifest list every skill folder.
 - Every `references/*.md` a SKILL.md mentions exists, every reference file is
   mentioned by its SKILL.md, and no skill reaches outside its own folder.
 
@@ -31,6 +31,11 @@ MANIFESTS = {
     ".claude-plugin/marketplace.json": ["plugins", 0, "version"],
     ".codex-plugin/plugin.json": ["version"],
     ".cursor-plugin/plugin.json": ["version"],
+}
+# Claude Code reads the marketplace entry; hosts that load the plugin directly read plugin.json.
+SKILL_LISTS = {
+    ".claude-plugin/marketplace.json": ["plugins", 0, "skills"],
+    ".claude-plugin/plugin.json": ["skills"],
 }
 
 
@@ -106,13 +111,13 @@ def main() -> int:
     if cursor.get("skills") != "./":
         errors.append('.cursor-plugin/plugin.json: "skills" must be "./" so Cursor finds every skill')
 
-    marketplace = json.loads((ROOT / ".claude-plugin/marketplace.json").read_text())
-    listed = {s.removeprefix("./").rstrip("/") for s in marketplace["plugins"][0]["skills"]}
-    for folder in folders:
-        if folder.name not in listed:
-            errors.append(f".claude-plugin/marketplace.json: {folder.name} is not listed")
-    for name in sorted(listed - {f.name for f in folders}):
-        errors.append(f".claude-plugin/marketplace.json: lists {name}, which does not exist")
+    for manifest, path in SKILL_LISTS.items():
+        listed = {s.removeprefix("./").rstrip("/") for s in dig(json.loads((ROOT / manifest).read_text()), path)}
+        for folder in folders:
+            if folder.name not in listed:
+                errors.append(f"{manifest}: {folder.name} is not listed")
+        for name in sorted(listed - {f.name for f in folders}):
+            errors.append(f"{manifest}: lists {name}, which does not exist")
 
     for error in errors:
         print(f"::error::{error}")

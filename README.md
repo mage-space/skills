@@ -8,14 +8,14 @@ Browse every skill with examples at [mage.space/skills](https://www.mage.space/s
 
 ## Install
 
-Two steps: connect Mage, then add the skills.
+Two steps: connect Mage, then add the skills. The plugin does both; see [Plugin connection](#plugin-connection).
 
 ### 1. Connect Mage
 
 | Agent | How |
 |---|---|
 | Claude | Customize → Connectors → Add custom connector, URL `https://mcp.mage.space/mcp`, then sign in to Mage |
-| Claude Code | `claude mcp add --transport http mage https://mcp.mage.space/mcp`, then `/mcp` to sign in |
+| Claude Code | `claude mcp add --transport http mage https://mcp.mage.space/mcp`, then `/mcp` to sign in. Skip this with the plugin. |
 | ChatGPT, Grok, Cursor, and others | [mage.space/mcp](https://www.mage.space/mcp) |
 
 ### 2. Add the skills
@@ -25,6 +25,14 @@ npx skills add mage-space/skills
 ```
 
 Works with Claude Code, Codex, Cursor, and any agent that loads `SKILL.md` skills. Other ways, including the Claude Code plugin and claude.ai uploads, are in [INSTALL.md](./INSTALL.md). Agents can install themselves with [INSTALL_FOR_AGENTS.md](./INSTALL_FOR_AGENTS.md).
+
+### Plugin connection
+
+The plugin manifest includes every skill and the production Mage MCP server. Compatible plugin hosts, including Claude Code and Grok Build, discover the connection automatically and ask you to sign in to Mage through OAuth, so skip step 1. If you already added `mage` with `claude mcp add`, remove it with `claude mcp remove mage` so the tools aren't listed twice. Installing this source does not mean it is listed or approved in a platform’s public directory.
+
+The connector calls `https://mcp.mage.space/mcp`, with sign-in and OAuth token handling at `https://www.mage.space`. It accesses the connected account’s balance, media history, saved creations, characters, and references; it can generate media, manage characters and references, upload files, and cancel requests. Generations spend Gems. It requests no local shell server, lifecycle hooks, or stored API keys. Disconnect it in [Mage’s connected apps](https://www.mage.space/mcp?tab=connected).
+
+Publisher: Ollano Inc. Support: [mage@mage.space](mailto:mage@mage.space). [Privacy policy](https://www.mage.space/privacy-policy) · [Terms](https://www.mage.space/terms-and-conditions).
 
 ## Skills
 

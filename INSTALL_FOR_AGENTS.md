@@ -8,7 +8,7 @@ Look for the Mage tools (`list_models`, `generate`, `get_request`). If they're a
 
 Otherwise connect Mage:
 
-- **Claude Code:** run `claude mcp add --transport http mage https://mcp.mage.space/mcp`, then ask the user to run `/mcp`, select mage, and sign in with their Mage account. Wait for them to confirm.
+- **Claude Code:** skip this; the plugin in step 2 connects Mage. Once it's installed and Claude Code has restarted, ask the user to run `/mcp`, select the Mage server, and sign in. Without the plugin, run `claude mcp add --transport http mage https://mcp.mage.space/mcp`, then ask the user to run `/mcp`, select mage, and sign in with their Mage account. Wait for them to confirm.
 - **Other agents:** ask the user to add the MCP server `https://mcp.mage.space/mcp` in your settings and sign in, following https://www.mage.space/mcp. Wait for them to confirm.
 
 ## Step 2: install the skills
