@@ -8,7 +8,6 @@ Agent skills that drive the Mage connector (the MCP server at `https://mcp.mage.
 mage-<name>/SKILL.md          # one skill: frontmatter, workflow, UX rules
 mage-<name>/references/*.md   # read on demand: recipes, rules, prompt templates
 .claude-plugin/               # Claude Code marketplace and plugin manifests
-.mcp.json                     # production OAuth MCP connection for compatible hosts
 .codex-plugin/, .cursor-plugin/
 scripts/validate.py           # CI: frontmatter, versions, references, self-containment
 setup                         # links skills into ~/.claude, ~/.codex, ~/.cursor

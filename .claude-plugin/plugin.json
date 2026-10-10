@@ -52,5 +52,11 @@
     "./mage-lipsync",
     "./mage-music-video",
     "./mage-scene-builder"
-  ]
+  ],
+  "mcpServers": {
+    "mage": {
+      "type": "http",
+      "url": "https://mcp.mage.space/mcp"
+    }
+  }
 }

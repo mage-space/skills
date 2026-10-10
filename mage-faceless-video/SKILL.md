@@ -27,7 +27,7 @@ Make a narrated video with no one on camera: a clear script, one locked illustra
 
 ## Before you start
 
-1. **Mage tools:** `get_model`, `estimate_cost`, `generate`, `get_request`, and `create_reference` (for a narrator voice). If they are missing, ask the user to connect Mage (Claude: Customize → Connectors → Add custom connector, `https://mcp.mage.space/mcp`; Claude Code: `claude mcp add --transport http mage https://mcp.mage.space/mcp`; others: https://www.mage.space/mcp), then wait.
+1. **Mage tools:** `get_model`, `estimate_cost`, `generate`, `get_request`, and `create_reference` (for a narrator voice). If they are missing, ask the user to connect Mage (Claude: Customize → Connectors → Add custom connector, `https://mcp.mage.space/mcp`; Claude Code: `/mcp` to sign in if the Mage plugin is installed, otherwise `claude mcp add --transport http mage https://mcp.mage.space/mcp`; others: https://www.mage.space/mcp), then wait.
 2. **Facts.** For a real topic, use your web search or research tools and keep a short source list. Never script facts from memory alone, and never invent quotes, dates, or numbers. For a personal story, use only what the user tells you.
 
 ## UX rules
