@@ -32,11 +32,9 @@ MANIFESTS = {
     ".codex-plugin/plugin.json": ["version"],
     ".cursor-plugin/plugin.json": ["version"],
 }
-# Claude Code reads the marketplace entry; hosts that load the plugin directly read plugin.json.
-SKILL_LISTS = {
-    ".claude-plugin/marketplace.json": ["plugins", 0, "skills"],
-    ".claude-plugin/plugin.json": ["skills"],
-}
+# The one skill list: Claude Code reads it through the marketplace entry and when it
+# loads the plugin directly.
+SKILL_LIST = ".claude-plugin/plugin.json"
 
 
 def dig(value, path):
@@ -111,13 +109,21 @@ def main() -> int:
     if cursor.get("skills") != "./":
         errors.append('.cursor-plugin/plugin.json: "skills" must be "./" so Cursor finds every skill')
 
-    for manifest, path in SKILL_LISTS.items():
-        listed = {s.removeprefix("./").rstrip("/") for s in dig(json.loads((ROOT / manifest).read_text()), path)}
+    skills = json.loads((ROOT / SKILL_LIST).read_text()).get("skills")
+    if not isinstance(skills, list) or not all(isinstance(s, str) for s in skills):
+        errors.append(f'{SKILL_LIST}: "skills" must be a list of skill folders')
+    else:
+        listed = [s.removeprefix("./").rstrip("/") for s in skills]
+        for name in sorted({n for n in listed if listed.count(n) > 1}):
+            errors.append(f"{SKILL_LIST}: lists {name} more than once")
         for folder in folders:
             if folder.name not in listed:
-                errors.append(f"{manifest}: {folder.name} is not listed")
-        for name in sorted(listed - {f.name for f in folders}):
-            errors.append(f"{manifest}: lists {name}, which does not exist")
+                errors.append(f"{SKILL_LIST}: {folder.name} is not listed")
+        for name in sorted(set(listed) - {f.name for f in folders}):
+            errors.append(f"{SKILL_LIST}: lists {name}, which does not exist")
+    marketplace = json.loads((ROOT / ".claude-plugin/marketplace.json").read_text())
+    if "skills" in marketplace["plugins"][0]:
+        errors.append(f'.claude-plugin/marketplace.json: list skills only in {SKILL_LIST}, not in the marketplace entry')
 
     for error in errors:
         print(f"::error::{error}")
