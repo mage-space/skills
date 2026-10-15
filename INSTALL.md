@@ -6,6 +6,8 @@ Seventeen are the [Mage apps](https://www.mage.space/apps) as skills: `mage-face
 
 Every skill needs two things: the **Mage connector** in your agent, and the **skill files**.
 
+**Claude Code:** the [plugin](#option-3-claude-code-plugin) brings both. Install it, run `/mcp`, select the Mage server, and sign in; skip step 1. Every other agent and install method starts with step 1.
+
 ## Step 1: connect Mage
 
 The connector is Mage's MCP server at `https://mcp.mage.space/mcp`. You sign in with your Mage account; generations are paid from its Gems.
@@ -13,7 +15,7 @@ The connector is Mage's MCP server at `https://mcp.mage.space/mcp`. You sign in 
 | Agent | How |
 |---|---|
 | Claude (web, desktop) | Customize → Connectors → Add custom connector. Name it Mage, URL `https://mcp.mage.space/mcp`, then sign in. In a chat, turn Mage on from the **+** menu. |
-| Claude Code | `claude mcp add --transport http mage https://mcp.mage.space/mcp`, then run `/mcp`, select mage, and sign in. |
+| Claude Code (without the plugin) | `claude mcp add --transport http mage https://mcp.mage.space/mcp`, then run `/mcp`, select mage, and sign in. |
 | Codex | Add `https://mcp.mage.space/mcp` as a streamable HTTP MCP server and sign in when prompted. |
 | Cursor, ChatGPT, Grok | Follow [mage.space/mcp](https://www.mage.space/mcp). |
 
@@ -44,7 +46,9 @@ Inside Claude Code:
 /plugin install mage@mage
 ```
 
-Skills are then namespaced, for example `/mage:mage-product-photoshoot`.
+Run `/reload-plugins` (or restart Claude Code), then `/mcp`: select the Mage server and sign in. If you already added `mage` with `claude mcp add`, Claude Code keeps your entry and doesn't list the tools twice; `claude mcp remove mage` is optional cleanup. Skills are namespaced, for example `/mage:mage-product-photoshoot`.
+
+The Codex and Cursor plugin manifests carry the skills only; connect Mage in those agents with step 1.
 
 ### Option 4: claude.ai
 

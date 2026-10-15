@@ -30,7 +30,7 @@ Create images, video, and audio with Mage. Every generation runs through the Mag
 
 1. **Mage tools.** This skill calls the connector's tools: `list_models`, `get_model`, `estimate_cost`, `generate`, `get_request`, and `create_upload` for local files. If they are not available, ask the user to connect Mage, then wait:
    - Claude: Customize → Connectors → Add custom connector, URL `https://mcp.mage.space/mcp`, then sign in to Mage.
-   - Claude Code: `claude mcp add --transport http mage https://mcp.mage.space/mcp`, then `/mcp` to sign in.
+   - Claude Code: `/mcp` to sign in if the Mage plugin is installed, otherwise `claude mcp add --transport http mage https://mcp.mage.space/mcp`, then `/mcp` to sign in.
    - ChatGPT, Grok, Cursor, and others: https://www.mage.space/mcp.
 2. **Balance.** `get_account` shows the Gems balance. Check it only when a price is large or a generation fails with `insufficient_gems`.
 

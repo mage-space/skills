@@ -27,7 +27,7 @@ Save someone or something once, then keep it consistent everywhere. A Mage **cha
 
 ## Before you start
 
-1. **Mage tools.** This skill uses `list_characters`, `create_character`, `delete_character`, `list_references`, `create_reference`, `delete_reference`, and the generation tools (`get_model`, `estimate_cost`, `generate`, `get_request`). If they are missing, ask the user to connect Mage (Claude: Customize → Connectors → Add custom connector, `https://mcp.mage.space/mcp`; Claude Code: `claude mcp add --transport http mage https://mcp.mage.space/mcp`; others: https://www.mage.space/mcp), then wait.
+1. **Mage tools.** This skill uses `list_characters`, `create_character`, `delete_character`, `list_references`, `create_reference`, `delete_reference`, and the generation tools (`get_model`, `estimate_cost`, `generate`, `get_request`). If they are missing, ask the user to connect Mage (Claude: Customize → Connectors → Add custom connector, `https://mcp.mage.space/mcp`; Claude Code: `/mcp` to sign in if the Mage plugin is installed, otherwise `claude mcp add --transport http mage https://mcp.mage.space/mcp`; others: https://www.mage.space/mcp), then wait.
 2. **Images are links.** `create_character` and `create_reference` take an https URL of a JPEG or PNG, a data URL, or an upload URL from `create_upload`. Files attached to the chat never reach Mage: ask for a direct link, or upload from disk when you can run commands.
 3. **Consent.** Only save a real person's likeness with that person's consent. Never build a character to impersonate someone.
 

@@ -8,8 +8,8 @@ and this repository's conventions:
   the naming rules; `description` is at most 1024 characters and names its
   "Use when" triggers and its "NOT for" boundary; `metadata.version` matches VERSION.
 - SKILL.md stays under 500 lines.
-- Every plugin manifest carries the VERSION, and the Claude Code marketplace
-  lists every skill folder.
+- Every plugin manifest carries the VERSION, and the Claude Code marketplace and
+  plugin manifest list every skill folder.
 - Every `references/*.md` a SKILL.md mentions exists, every reference file is
   mentioned by its SKILL.md, and no skill reaches outside its own folder.
 
@@ -32,6 +32,9 @@ MANIFESTS = {
     ".codex-plugin/plugin.json": ["version"],
     ".cursor-plugin/plugin.json": ["version"],
 }
+# The one skill list: Claude Code reads it through the marketplace entry and when it
+# loads the plugin directly.
+SKILL_LIST = ".claude-plugin/plugin.json"
 
 
 def dig(value, path):
@@ -106,13 +109,21 @@ def main() -> int:
     if cursor.get("skills") != "./":
         errors.append('.cursor-plugin/plugin.json: "skills" must be "./" so Cursor finds every skill')
 
+    skills = json.loads((ROOT / SKILL_LIST).read_text()).get("skills")
+    if not isinstance(skills, list) or not all(isinstance(s, str) for s in skills):
+        errors.append(f'{SKILL_LIST}: "skills" must be a list of skill folders')
+    else:
+        listed = [s.removeprefix("./").rstrip("/") for s in skills]
+        for name in sorted({n for n in listed if listed.count(n) > 1}):
+            errors.append(f"{SKILL_LIST}: lists {name} more than once")
+        for folder in folders:
+            if folder.name not in listed:
+                errors.append(f"{SKILL_LIST}: {folder.name} is not listed")
+        for name in sorted(set(listed) - {f.name for f in folders}):
+            errors.append(f"{SKILL_LIST}: lists {name}, which does not exist")
     marketplace = json.loads((ROOT / ".claude-plugin/marketplace.json").read_text())
-    listed = {s.removeprefix("./").rstrip("/") for s in marketplace["plugins"][0]["skills"]}
-    for folder in folders:
-        if folder.name not in listed:
-            errors.append(f".claude-plugin/marketplace.json: {folder.name} is not listed")
-    for name in sorted(listed - {f.name for f in folders}):
-        errors.append(f".claude-plugin/marketplace.json: lists {name}, which does not exist")
+    if "skills" in marketplace["plugins"][0]:
+        errors.append(f'.claude-plugin/marketplace.json: list skills only in {SKILL_LIST}, not in the marketplace entry')
 
     for error in errors:
         print(f"::error::{error}")
