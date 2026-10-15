@@ -8,6 +8,7 @@ Agent skills that drive the Mage connector (the MCP server at `https://mcp.mage.
 mage-<name>/SKILL.md          # one skill: frontmatter, workflow, UX rules
 mage-<name>/references/*.md   # read on demand: recipes, rules, prompt templates
 .claude-plugin/               # Claude Code marketplace and plugin manifests
+.grok-plugin/plugin.json      # Grok Build: a copy of .claude-plugin/plugin.json
 .codex-plugin/, .cursor-plugin/
 scripts/validate.py           # CI: frontmatter, versions, references, self-containment
 setup                         # links skills into ~/.claude, ~/.codex, ~/.cursor
@@ -28,7 +29,7 @@ COOKBOOK.md                   # recipes that chain skills
 
 ## Versions
 
-`VERSION` is the source of truth; `metadata.version` in every `SKILL.md` and the four plugin manifests must match. release-please bumps them all; don't edit versions by hand. `python3 scripts/validate.py` checks everything CI checks.
+`VERSION` is the source of truth; `metadata.version` in every `SKILL.md` and the five plugin manifests must match. release-please bumps them all; don't edit versions by hand. `python3 scripts/validate.py` checks everything CI checks.
 
 ## Where skills show up
 

@@ -31,6 +31,7 @@ MANIFESTS = {
     ".claude-plugin/marketplace.json": ["plugins", 0, "version"],
     ".codex-plugin/plugin.json": ["version"],
     ".cursor-plugin/plugin.json": ["version"],
+    ".grok-plugin/plugin.json": ["version"],
 }
 # The one skill list: Claude Code reads it through the marketplace entry and when it
 # loads the plugin directly.
@@ -121,6 +122,9 @@ def main() -> int:
                 errors.append(f"{SKILL_LIST}: {folder.name} is not listed")
         for name in sorted(set(listed) - {f.name for f in folders}):
             errors.append(f"{SKILL_LIST}: lists {name}, which does not exist")
+    # Grok Build and the xAI plugin index read .grok-plugin/ before any other manifest.
+    if json.loads((ROOT / ".grok-plugin/plugin.json").read_text()) != json.loads((ROOT / SKILL_LIST).read_text()):
+        errors.append(f".grok-plugin/plugin.json: must be an exact copy of {SKILL_LIST}")
     marketplace = json.loads((ROOT / ".claude-plugin/marketplace.json").read_text())
     if "skills" in marketplace["plugins"][0]:
         errors.append(f'.claude-plugin/marketplace.json: list skills only in {SKILL_LIST}, not in the marketplace entry')

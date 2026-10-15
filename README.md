@@ -38,7 +38,7 @@ In Claude Code:
 
 Then run `/mcp`, select the Mage server, and sign in to Mage; skip step 1.
 
-The Claude Code plugin manifest (`.claude-plugin/plugin.json`) includes every skill and the production Mage MCP server. [Grok Build reads Claude Code plugins](https://docs.x.ai/build/features/skills-plugins-marketplaces) and finds the same skills and server, but Mage sign-in there hasn't been tested end to end. The Codex and Cursor plugin manifests carry the skills only: connect Mage in those agents with step 1.
+The Claude Code plugin manifest (`.claude-plugin/plugin.json`) includes every skill and the production Mage MCP server. `.grok-plugin/plugin.json` is the same manifest for [Grok Build](https://docs.x.ai/build/features/skills-plugins-marketplaces), but Mage sign-in there hasn't been tested end to end. The Codex and Cursor plugin manifests carry the skills only: connect Mage in those agents with step 1.
 
 If you already added `mage` with `claude mcp add`, Claude Code keeps your entry and doesn't list the tools twice; `claude mcp remove mage` is optional cleanup. Installing this source does not mean it is listed or approved in a platform’s public directory.
 
