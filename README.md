@@ -44,7 +44,7 @@ If you already added `mage` with `claude mcp add`, Claude Code keeps your entry 
 
 The connector calls `https://mcp.mage.space/mcp`, with sign-in and OAuth token handling at `https://www.mage.space`. It accesses the connected account’s balance, media history, saved creations, characters, and references; it can generate media, manage characters and references, upload files, and cancel requests. Generations spend Gems. It requests no local shell server, lifecycle hooks, or stored API keys. Disconnect it in [Mage’s connected apps](https://www.mage.space/mcp?tab=connected).
 
-Publisher: Ollano Inc. Support: [mage@mage.space](mailto:mage@mage.space). [Privacy policy](https://www.mage.space/privacy-policy) · [Terms](https://www.mage.space/terms-and-conditions).
+Publisher: Mage (Ollano Inc.). Support: [mage@mage.space](mailto:mage@mage.space). [Privacy policy](https://www.mage.space/privacy-policy) · [Terms](https://www.mage.space/terms-and-conditions).
 
 ## Skills
 

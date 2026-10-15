@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Mage skills for images, video, and audio: generation, consistent characters, product photoshoots, marketplace listings, ad variants, resizes, and translations, UGC videos, faceless videos, YouTube thumbnails, and the Mage apps as skills (swaps, inpaint, relight, angles, character building, lip sync, video editing, scenes), through the Mage connector.",
   "author": {
-    "name": "Ollano Inc.",
+    "name": "Mage",
     "email": "mage@mage.space",
     "url": "https://www.mage.space"
   },
