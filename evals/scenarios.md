@@ -51,6 +51,11 @@ Requests that should (✓) and should not (✗) load each skill. Use them to che
 - ✓ "A Shorts cover with my face looking shocked."
 - ✗ "Make the video itself." → mage-generate or mage-faceless-video
 
+## mage-short-drama
+- ✓ "A 30-second vertical drama: a waitress and her estranged brother at a diner at night."
+- ✓ "Turn this script into episode 1 of a short drama series."
+- ✗ "A video scene of @nova and @kai on a dinner date." → mage-scene-builder
+
 ## mage-face-swap
 - ✓ "Put the face from this photo onto this one: <link> <link>"
 - ✗ "Swap her face in this video." → mage-video-face-swap
@@ -117,6 +122,7 @@ Requests that should (✓) and should not (✗) load each skill. Use them to che
 
 ## mage-scene-builder
 - ✓ "A dinner date scene with @nova and @kai."
+- ✗ "Write and film episode 1 of a drama series with @nova and @kai." → mage-short-drama
 - ✗ "A video of @nova walking on a beach." → mage-generate
 
 ## Behavior checks

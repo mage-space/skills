@@ -31,5 +31,8 @@ A code you don't know: treat it by what the message says, and don't loop.
 
 - **Wrong text in an image:** switch to GPT Image 2.5 Flare, quote the text exactly, and keep each line short.
 - **The subject changed during an edit:** say what must stay the same ("keep the face, pose, and clothing unchanged") and describe only the change.
-- **A character doesn't look like the reference:** save them with `mage-characters` and mention `@handle`, or pass the portrait in `image` and say "the person from @image1".
+- **A character doesn't look like the reference:** save them with `mage-characters` and mention `@handle`, pass the face crop in `image` too ("her face exactly as in @image1"), lock the face in a still before any video, and keep the face at medium or closer. The Likeness section of `prompt-guide.md` has the method.
 - **Video too static:** describe camera movement and one clear action. **Too chaotic:** fewer actions, a static camera.
+- **Unwanted cuts, subtitles, music, or invented speech:** each model has its own switch words ("Generate single shot.", "No subtitles.", "No dialogue.", "No background music."): see the model's file in `references/models/`.
+- **A Lemon result that is a still image, not a clip:** Lemon's own filter stopped the prompt or an input. Reword plainly or replace the input.
+- **Blocked on something innocent** (a water pour, a cardigan, a beach): with a Cherry edit, the source video's audio is a frequent cause; retry with `keep_original_audio: true`. Otherwise reword plainly: describe what is visible and drop words that read as risky out of context. Never add policy words or try to slip past a filter.
