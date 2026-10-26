@@ -9,9 +9,10 @@ description: |
   default. Use when: "scene builder", "a scene with these two characters",
   "make these two have dinner", "put @a and @b in a boxing match",
   "two-character video", "dialogue scene between my characters", "a wedding
-  video of these two". NOT for: one character alone (mage-generate), a music
-  performance (mage-music-video), a talking head (mage-lipsync), product
-  videos (mage-ugc-video), or real people without their consent.
+  video of these two". NOT for: one character alone (mage-generate), a
+  scripted drama or series (mage-short-drama), a music performance
+  (mage-music-video), a talking head (mage-lipsync), product videos
+  (mage-ugc-video), or real people without their consent.
 license: MIT
 compatibility: Requires the Mage connector (https://mcp.mage.space/mcp) and a Mage account with Gems.
 metadata:

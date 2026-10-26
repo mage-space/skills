@@ -36,6 +36,14 @@ The product photo is the reference for everything, so the bottle looks the same 
 4. `mage-scene-builder`: "A late night drive with @nova and @kai, 10 seconds."
 5. `mage-lipsync`: "Make @nova say: 'Welcome back to the channel.'"
 
+## Film a vertical drama series
+
+1. `mage-characters`: "Save these two as Nora and Eli, and give each a voice that fits their face. <link> <link>"
+2. `mage-short-drama`: "Episode 1 of a vertical drama: Nora runs a diner at night; her estranged brother Eli brings the key to their late father's house. 30 seconds, end on a cliffhanger."
+3. `mage-short-drama`: "Episode 2 picks up from the key. Add a quiet piano underscore."
+
+The cast and the diner stay saved by `@handle`, so every episode keeps the same faces, voices, and room. Approve the script and the storyboard stills before the scenes render: they cost a fraction of one scene.
+
 ## Fix and finish a still
 
 1. `mage-refine`: "Fix the hands in this image. <link>"

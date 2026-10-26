@@ -29,15 +29,16 @@ curl -X PUT -T clip.mp4 \
 | Mango, Guava, GPT Image 2.5 Flare | `image`, `additional_images` | none | none |
 | Cherry (all variants) | `image`, `additional_images` | none | `videos` |
 | Lemon | `image`, `additional_images` | `first_image`, `last_image` | `videos` |
-| Seed Audio | `image` (one) | none | none |
+| Seed Audio | `image` (one picture of a person or creature) | none | none |
+| Eleven Speech, Eleven Music | none | none | none |
 
-`get_model` returns the exact fields (`image_inputs`, `video_inputs`) and the image budget (`max_images`), which characters and references mentioned in the prompt share.
+Opt-in models differ (Berry and Grok Video take one source `video`, not `videos`); their files in `references/models/` list their inputs. `get_model` returns the exact fields (`image_inputs`, `video_inputs`) and the image budget (`max_images`), which characters and references mentioned in the prompt share.
 
 ## Patterns
 
 - **Edit an image:** pass it in `image` with Mango 3 and describe only the change. Mango 3 keeps everything else in place.
 - **Combine images:** put each in `image` / `additional_images` and name them in the prompt with `@image1`, `@image2`: "The model from @image1 holding the bag from @image2 on the street from @image3."
 - **Image to video, exact first frame:** Lemon with `first_image`, and optionally `last_image` for where it ends.
-- **Image to video, highest quality:** Cherry 2 Pro with the image in `image`. The clip follows the reference but does not start on it pixel for pixel.
-- **Edit a video:** Cherry 2 Pro or Lemon with the clip in `videos`, and a prompt describing the change ("Change her jacket to red leather. Keep the motion, framing, and timing."). The price depends on the clip's length, measured on submit; `estimate_cost` answers `requires_media_measurement`.
-- **Score a picture:** Seed Audio with the image in `image` and a prompt for the kind of sound.
+- **Image to video, highest quality:** Cherry 2 Pro with the image in `image` and `Use @image1 as the first frame.` as the prompt's first sentence, `aspect_ratio` set to the image's. It is a reference, not a frame field, so the clip may not match it pixel for pixel; for that, use Lemon's `first_image`.
+- **Edit a video:** Cherry 2 Pro or Lemon with the clip in `videos`, and a prompt describing the change ("Change her jacket to red leather. Keep the motion, framing, and timing."). Call the clip `video 1` in the prompt; `@video1` is refused. The price depends on the clip's length: `estimate_cost` measures a `create_upload` URL or an earlier result, and answers `requires_media_measurement` for a video on another host. On Cherry, `keep_original_audio: true` keeps the source's sound for a visual edit and avoids moderation false flags caused by it.
+- **A voice for a face:** Seed Audio with a picture of the person or creature in `image`: the model designs a voice that fits it, and the prompt can be just the delivery and the words.

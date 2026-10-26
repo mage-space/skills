@@ -10,8 +10,9 @@ and this repository's conventions:
 - SKILL.md stays under 500 lines.
 - Every plugin manifest carries the VERSION, and the Claude Code marketplace and
   plugin manifest list every skill folder.
-- Every `references/*.md` a SKILL.md mentions exists, every reference file is
-  mentioned by its SKILL.md, and no skill reaches outside its own folder.
+- Every `references/**/*.md` a SKILL.md mentions exists, every reference file
+  (subfolders included) is mentioned by its SKILL.md, and no skill reaches
+  outside its own folder.
 
 Run it from the repository root: `python3 scripts/validate.py`. Needs PyYAML.
 """
@@ -78,12 +79,12 @@ def check_skill(folder: Path, version: str) -> list[str]:
     if lines > 500:
         errors.append(f"{skill_md}: {lines} lines; move detail into references/")
 
-    mentioned = set(re.findall(r"references/([A-Za-z0-9_.-]+\.md)", text))
+    mentioned = set(re.findall(r"references/([A-Za-z0-9_./-]+\.md)", text))
     for ref in sorted(mentioned):
         if not (folder / "references" / ref).is_file():
             errors.append(f"{skill_md}: mentions references/{ref}, which does not exist")
-    for path in sorted((folder / "references").glob("*.md")):
-        if path.name not in mentioned:
+    for path in sorted((folder / "references").rglob("*.md")):
+        if path.relative_to(folder / "references").as_posix() not in mentioned:
             errors.append(f"{path}: not mentioned in {skill_md}, so no agent will read it")
 
     for path in [skill_md, *sorted(folder.rglob("*.md"))]:
