@@ -74,7 +74,7 @@ Photo of a stylish young woman with short black hair standing confidently in fro
 Young woman in red hanfu, intricate gold embroidery. Neat makeup, red floral forehead mark. Elaborate high bun, gold phoenix headdress, red flowers, beads. Holds a round folding fan painted with a lady, trees and a bird. A small neon lightning-bolt lamp glows bright yellow above her extended left palm. Soft-lit outdoor night background, silhouetted tiered pagoda, blurred colourful lights in the distance.
 ```
 
-**A worked-out design** (3:4):
+**A worked-out design** (4:5):
 
 ```
 A printed menu card for a small ramen bar, cream paper with a thin black border. At the top, the title "KUMO RAMEN" in bold black brush lettering. Below, three items in a clean serif font, each with a price aligned right: "Shoyu Ramen 14", "Miso Ramen 15", "Spicy Tantanmen 16". At the bottom, small grey text: "Open 5pm – late". A single ink illustration of a steaming bowl sits beside the title. The card lies on a dark walnut counter, soft overhead light, top-down view.

@@ -64,16 +64,16 @@ The sound includes <dialogue, ambience, effects or music>.
 With references or several beats, use these section labels in the prompt:
 
 ```
-【Generation Goal】 Generate <kind of video>. The core subject is <subject>; the principal event is <one-line summary>.
-【Reference Asset Roles】 One line per asset: <Name> is @handle; use only the face, hairstyle and clothing. @image2 is the café; use only its layout and light, not the people in it.
-【Subjects and Relationships】 Fixed features, who stands where relative to doors and tables, who holds what.
-【Event Script】 At the start: <state>. Then Shot 1 / Shot 2… or 0-4 seconds / 4-9 seconds… At the end: <final positions, who holds what>.
-【Maintain Consistency】 Identities and count, clothing, prop ownership, directions, which voice belongs to whom.
+Goal: Generate <kind of video>. The core subject is <subject>; the principal event is <one-line summary>.
+Inputs: One line per asset: <Name> is @handle; use only the face, hairstyle and clothing. @image2 is the café; use only its layout and light, not the people in it.
+Positions: Fixed features, who stands where relative to doors and tables, who holds what.
+Script: At the start: <state>. Then Shot 1 / Shot 2… or 0-4 seconds / 4-9 seconds… At the end: <final positions, who holds what>.
+Keep the same: Identities and count, clothing, prop ownership, directions, which voice belongs to whom.
 ```
 
 Several shots in one clip:
 
-- Mark beats with `Shot N:` or with continuous whole-second ranges that cover the clip with no gaps ("0-3 seconds… 3-7 seconds… 7-12 seconds…"). Moments work too: "At the 5-second mark…", "After 3 seconds…".
+- Mark beats with `Shot N:` or with continuous whole-second ranges that cover the clip with no gaps ("0-3 seconds… 3-7 seconds… 7-10 seconds…"). Moments work too: "At the 5-second mark…", "After 3 seconds…".
 - Budget one beat or shot per 3–5 seconds. Too little content and the model improvises; too much and it adds cuts or skips beats. Never time rapid repeated actions.
 - Use second ranges when a beat must land at a moment (an entrance, a handoff, a line on an action); otherwise `Shot N` or stages, and let the `duration` field set the length.
 - Each shot: `[shot size, camera position, angle, move]`, the action as a chain with hand states, the exact line in `{}`, and an end state ("End with the dagger flat on the rug, no hand on it").
@@ -114,11 +114,11 @@ Three paragraphs, then one closing line:
 Cherry 2 Pro takes a 4–30 s source (under 20 s works best) and returns the same length and ratio. The others take 2–15 s. Use an edit verb (edit, add, insert, remove, replace, change to) and write `video 1` itself, never "reference video 1", which turns the edit into a new generation.
 
 ```
-【Editing Goal】 Edit video 1, changing only <object or region> to <target>.
-【Role of the Source Video】 video 1 is the sole editing master and governs the scene, camera, action paths, occlusion and event order.
-【Role of the Target Material】 @image1 is used only for <the target's appearance>; do not use its background.
-【Edit Objects and Scope】 Modify only <…>. There is exactly one <target> throughout. Except for the objects explicitly modified above, all other visible characters, props, and background elements in video 1 remain unchanged and are not to be replaced or removed.
-【Timeline Inheritance】 <Target> takes the exact appearance timing, path, speed and occlusion of <original>, which no longer appears. Everything else stays as in video 1.
+Edit: Edit video 1, changing only <object or region> to <target>.
+Source video: video 1 is the sole editing master and governs the scene, camera, action paths, occlusion and event order.
+New material: @image1 is used only for <the target's appearance>; do not use its background.
+Scope: Modify only <…>. There is exactly one <target> throughout. Except for the objects explicitly modified above, all other visible characters, props, and background elements in video 1 remain unchanged and are not to be replaced or removed.
+Timing: <Target> takes the exact appearance timing, path, speed and occlusion of <original>, which no longer appears. Everything else stays as in video 1.
 ```
 
 - Partial edits by time (Cherry 2 Pro): "from 4-6 seconds in video 1, change the man's action from drinking coffee to mopping the floor; leave the rest unchanged."
@@ -160,27 +160,27 @@ The otter has sleek wet brown fur and quick, playful movements. Ferns and smooth
 Low camera at water level with a slight handheld feel, following the otter. Natural sound only: rushing water, the wet slap of the slide, the splash, birdsong.
 ```
 
-Cherry 2 Pro, two saved characters with voices, three shots (12 s):
+Cherry 2 Pro, two saved characters with voices, three shots (10 s):
 
 ```
-【Generation Goal】 Generate a tense dialogue scene in a candlelit tent at night. Hatim offers bread to a guest who hides a dagger.
-【Reference Asset Roles】 Hatim is @hatim; use only his face, head wrap and cloak. The guest is @guest; use only his face, head wrap and travel cloak.
-【Subjects and Relationships】 Hatim sits on the west side of a low rug, the guest on the east side, a clay plate of bread between them. The camera stays south of them.
-【Event Script】
+Goal: Generate a tense dialogue scene in a candlelit tent at night. Hatim offers bread to a guest who hides a dagger.
+Inputs: Hatim is @hatim; use only his face, head wrap and cloak. The guest is @guest; use only his face, head wrap and travel cloak.
+Positions: Hatim sits on the west side of a low rug, the guest on the east side, a clay plate of bread between them. The camera stays south of them.
+Script:
 Shot 1: [Medium two-shot from the south, locked off] The guest's right hand rests on a sheathed dagger under his cloak. Hatim tears bread and holds out a piece. Hatim's line (in English, warm): {Eat. You are my guest.}
 Shot 2: [Close-up on the guest, slow push in] His eyes move from Hatim's face to the bread. He lets go of the hilt and takes the bread with that same hand. Hatim keeps his mouth naturally closed.
 Shot 3: [Medium two-shot from the south, locked off] Both men eat in silence. End with the bread in the guest's hand and the dagger still sheathed.
-【Maintain Consistency】 Two men only, seats unchanged, the dagger stays sheathed. No subtitles. Sound: candle crackle, cloth rustle, wind against the tent.
+Keep the same: Two men only, seats unchanged, the dagger stays sheathed. No subtitles. Sound: candle crackle, cloth rustle, wind against the tent.
 ```
 
 Cherry 2 Pro, replace a moving subject, original sound kept (`videos`: the park clip; `keep_original_audio: true`):
 
 ```
-【Editing Goal】 Edit video 1, replacing only the red bicycle and its rider with the dark-gray electric patrol cart from @image1.
-【Role of the Source Video】 video 1 is the sole editing master and governs the park path, the two people on the bench, the camera, the rider's motion and the event order.
-【Role of the Target Material】 @image1 is used only for the cart's body, color and clear windshield; do not use its background or driver.
-【Edit Objects and Scope】 There is exactly one cart throughout. Except for the objects explicitly modified above, all other visible characters, props, and background elements in video 1 remain unchanged and are not to be replaced or removed.
-【Timeline Inheritance】 The cart takes the rider's exact timing, path, speed and occlusion in front of the bench. The bicycle and rider no longer appear.
+Edit: Edit video 1, replacing only the red bicycle and its rider with the dark-gray electric patrol cart from @image1.
+Source video: video 1 is the sole editing master and governs the park path, the two people on the bench, the camera, the rider's motion and the event order.
+New material: @image1 is used only for the cart's body, color and clear windshield; do not use its background or driver.
+Scope: There is exactly one cart throughout. Except for the objects explicitly modified above, all other visible characters, props, and background elements in video 1 remain unchanged and are not to be replaced or removed.
+Timing: The cart takes the rider's exact timing, path, speed and occlusion in front of the bench. The bicycle and rider no longer appear.
 ```
 
 Cherry 2 Pro, from an approved still (`image`: the still; 9:16, 8 s):

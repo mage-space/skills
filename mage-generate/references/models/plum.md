@@ -10,7 +10,7 @@ Mage's full-feature video model. Every clip comes with generated audio. It handl
 | `plum-max` | Faster finals | `480P`, `768P` | 5–15 | A last frame needs a first |
 | `plum-fast` (default) | Drafts; the cheapest | `480P`, `768P` | 4–15 | A last frame needs a first |
 
-One prompt suits all three: draft on `plum-fast`, then change only `model_id` for the final. On `plum-max`, an edit's source video bills above the output rate.
+One prompt suits all three: draft on `plum-fast`, then change `model_id` for the final; on `plum`, also set `resolution` to `768P` or `2K`, since it has no `480P`. On `plum-max`, an edit's source video bills above the output rate.
 
 ## How Mage sends your prompt
 
