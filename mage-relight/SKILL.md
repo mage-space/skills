@@ -3,7 +3,7 @@ name: mage-relight
 description: |
   Relight a photo with Mage: a new light source from a chosen direction, soft
   or hard, at a chosen brightness and color, with the content and composition
-  unchanged. The Relight app as a skill, on Mango 3 by default. Use when:
+  unchanged. The Relight app as a skill, on Mango 4 by default. Use when:
   "relight this photo", "change the lighting", "light it from the left", "add
   a rim light from behind", "warm golden light", "make the light softer",
   "dramatic side lighting", "match the lighting after a swap", "this looks
@@ -76,14 +76,14 @@ Example: "warm, hard light from the upper left" becomes "Relight this image with
 
 ## Settings
 
-- Model: Mango 3 (`mango`, `model_id: "mango-v3"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
+- Model: Mango 4 (`mango`, `model_id: "mango-v4"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
 - `aspect_ratio`: the model's option closest to the source image's width ÷ height, as the app does. Measure the file when you can run commands; otherwise judge it from the image, or ask.
 
 ## Run
 
 ```json
 {
-  "model_id": "mango-v3",
+  "model_id": "mango-v4",
   "resolution": "2K",
   "aspect_ratio": "<closest to the image>",
   "image": "<the image>",

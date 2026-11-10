@@ -24,14 +24,14 @@ Order the prompt as: image type (when there is one) → subject → action → s
 
 Example: "A ceramic coffee cup on a sunlit oak table, steam rising, shot on 50mm at f/2, soft window light from the left, warm editorial photograph."
 
-- **Length follows the model.** Short to medium prompts suit most models; Mango 3 and Guava reward long, exact descriptions (inventory a busy scene element by element, by where each sits), and SDXL reads only about 60 words. Say what matters most instead of stacking near-duplicate adjectives: twelve mood words lose to one light source, one lens and one style.
+- **Length follows the model.** Short to medium prompts suit most models; Mango 4 and Guava reward long, exact descriptions (inventory a busy scene element by element, by where each sits), and SDXL reads only about 60 words. Say what matters most instead of stacking near-duplicate adjectives: twelve mood words lose to one light source, one lens and one style.
 - **Phrase what you want**: "tack sharp" instead of "no blur", "empty street" instead of "no people". Where a model takes a negative list (Lemon's "Negative prompt list", Guava's `negative_prompt`), keep it to the specific things that must not appear.
 - **Settings are fields.** Aspect ratio, resolution, "4K", duration and frame rate go in `config`, never in the prompt.
 - **One call, one image.** For a set (a storyboard, a campaign), make one call per image with the same handles, style line and ratio, changing only the scene.
 
 ## Text in the image
 
-Mango 3 renders short text natively in English, Chinese and 14 other languages; long copy that must be letter-perfect belongs on GPT Image 2.5 Flare. Put the exact words in double quotes and say where they go and how they look: `Headline "SUMMER SALE" in bold white sans-serif across the top third; below it "Up to 40% off" in smaller type.` Keep each line short. Never write a word with `@` in front of it (Mage reads it as a handle). Check the spelling in the result before delivering.
+Mango 4 renders short text natively in English, Chinese and 14 other languages; long copy that must be letter-perfect belongs on GPT Image 2.5 Flare. Put the exact words in double quotes and say where they go and how they look: `Headline "SUMMER SALE" in bold white sans-serif across the top third; below it "Up to 40% off" in smaller type.` Keep each line short. Never write a word with `@` in front of it (Mage reads it as a handle). Check the spelling in the result before delivering.
 
 ## Inputs in the prompt
 
@@ -95,7 +95,7 @@ Rules:
 When the same person (the user's character, a creator, a model) must look like themselves across stills and clips:
 
 1. **Save them once.** Crop a tight, front-facing face from their reference (the face fills most of the frame, evenly lit), get it to a link (`create_upload` when you can run commands), and `create_character` from it. Mention the `@handle` in every shot, and on models that take reference images pass the face crop as `image` too: `Ana (@ana), her face exactly as in @image1, …`.
-2. **Lock the face in a still first**, where it is cheap to check: the still with the `@handle`, the face crop and the scene, on Mango 3. Compare it with the reference feature by feature (face shape and length, eyes, nose, jaw, hairline, skin tone, build) if you can see images, or show both to the user. Fix the still before any video.
+2. **Lock the face in a still first**, where it is cheap to check: the still with the `@handle`, the face crop and the scene, on Mango 4. Compare it with the reference feature by feature (face shape and length, eyes, nose, jaw, hairline, skin tone, build) if you can see images, or show both to the user. Fix the still before any video.
 3. **Animate from the approved still**, as the video's reference image or first frame, with the `@handle` and the face crop. Describe what the still shows; never re-describe the face from memory.
 4. **The user's own video, recast as their character:** an edit keeps the source's pixels, so the source person's face and body win over any reference. When the likeness matters more than the exact motion, generate from the approved still instead, describing the source's action, framing and timing, and say what that trades.
 5. **Keep the face large.** Wide shots lose the likeness first: frame the person at medium or closer, or redo a wide shot that drifted closer in.

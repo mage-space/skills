@@ -36,7 +36,7 @@ Opt-in models differ (Berry and Grok Video take one source `video`, not `videos`
 
 ## Patterns
 
-- **Edit an image:** pass it in `image` with Mango 3 and describe only the change. Mango 3 keeps everything else in place.
+- **Edit an image:** pass it in `image` with Mango 4 and describe only the change. Mango 4 keeps everything else in place.
 - **Combine images:** put each in `image` / `additional_images` and name them in the prompt with `@image1`, `@image2`: "The model from @image1 holding the bag from @image2 on the street from @image3."
 - **Image to video, exact first frame:** Lemon with `first_image`, and optionally `last_image` for where it ends.
 - **Image to video, highest quality:** Cherry 2 Pro with the image in `image` and `Use @image1 as the first frame.` as the prompt's first sentence, `aspect_ratio` set to the image's. It is a reference, not a frame field, so the clip may not match it pixel for pixel; for that, use Lemon's `first_image`.

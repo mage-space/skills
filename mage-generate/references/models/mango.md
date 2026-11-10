@@ -1,20 +1,21 @@
 # Mango (`mango`)
 
-Mage's flagship image family: consistent characters, precise edits that leave the rest of the image alone, and one scene merged from several references. Mango 3 (`mango-v3`) is the default still.
+Mage's flagship image family: consistent characters, precise edits that leave the rest of the image alone, and one scene merged from several references. Mango 4 (`mango-v4`) is the default still.
 
 ## Variants
 
 | `model_id` | Name | `resolution` | `@handles` | Point and box tags | Use it for |
 |---|---|---|---|---|---|
-| `mango-v3` | Mango 3 | 1K, 2K | yes | yes | Every final still: exact instructions, multi-reference scenes, edits |
-| `mango-v3-turbo` | Mango 3 Turbo | 1K, 2K | yes | yes | Drafts and volume; layouts and text. Same prompts as Mango 3 |
+| `mango-v4` | Mango 4 | 1K, 2K | yes | yes | Every final still: lifelike light and skin, small text, edits |
+| `mango-v3-turbo` | Mango 3 Turbo | 1K, 2K | yes | yes | Drafts and volume; layouts and text. Same prompts as Mango 4 |
+| `mango-v3` | Mango 3 | 1K, 2K | yes | yes | Matching earlier work on Mango 3 |
 | `mango-v3s` | Mango 3S | 2K, 3K | yes | no | A 3K still |
 | `mango-v2` | Mango 2 | 2K, 3K, 4K | yes | no | A 4K still |
 | `mango` | Mango | 1K–4K | no | no | Matching earlier work on the original Mango only |
 
-- One prompt carries across the family: draft on Turbo, final on Mango 3 with the same text. Coordinate tags (below) work only on Mango 3 and Mango 3 Turbo; drop them for the others.
-- Native text in 14 languages beyond English and Chinese is Mango 3 and Mango 3 Turbo only.
-- Mango 3 reasons over your prompt and expands it before drawing. It needs precise facts, not stacked adjectives.
+- One prompt carries across the family: draft on Turbo, final on Mango 4 with the same text. Coordinate tags (below) work only on Mango 4, Mango 3 and Mango 3 Turbo; drop them for the others.
+- Native text in 14 languages beyond English and Chinese is Mango 4, Mango 3 and Mango 3 Turbo only.
+- Mango 4 and Mango 3 expand your prompt before drawing, so give them precise facts, not stacked adjectives.
 - The original `mango` refuses every `@handle`, `@image1` included. Send its inputs in `image` and `additional_images` and write `image 1`, `image 2` in plain words.
 
 ## How Mage sends your prompt
@@ -77,7 +78,7 @@ Keep [named elements: pose, face, composition, lighting] unchanged.
 - Keeping a person on model (the prompt guide's Likeness section): mention the character and pass the face crop as `image`: `Ana (@ana), her face exactly as in @image1, …`. The model reads `Ana (character from image 2), her face exactly as in image 1`.
 - Name the target in edits by what it visibly is, never a pronoun: "the tallest panda", "the person on the left", "the largest bread man".
 - Marks drawn on the input (all variants): a circle, arrow, doodle or colored box, then point at the mark in words: "Insert a TV where the red area is marked and a sofa where the blue area is marked. Keep the original wooden style." End with "Remove all sketch lines."
-- Coordinates (Mango 3 and Mango 3 Turbo): a 0–999 grid per image, (0,0) top-left, (999,999) bottom-right; `x = round(x_px / width × 1000)`, the same for y. Put the tag right after the image label.
+- Coordinates (Mango 4, Mango 3 and Mango 3 Turbo): a 0–999 grid per image, (0,0) top-left, (999,999) bottom-right; `x = round(x_px / width × 1000)`, the same for y. Put the tag right after the image label.
   - `<point>x y</point>`: the model decides the affected area. `@image1 <point>520 460</point>` reads as `image 1 <point>520 460</point>`.
   - `<bbox>x1 y1 x2 y2</bbox>` (top-left, bottom-right): the exact region and size.
   - Name the target when a box holds several subjects ("the person on the left in image 1 <bbox>…</bbox>"), and box what must not change ("keep image 1 <bbox>700 120 920 360</bbox> unchanged").
@@ -90,7 +91,7 @@ Keep [named elements: pose, face, composition, lighting] unchanged.
 
 - Put the exact words in double quotes, with position and style: `the title "NIGHT MARKET" in bold red brush lettering across the top`. Never `titled Night Market`.
 - Say what the image is for: `Design a logo for a gaming company. The logo shows a dog playing with a game controller. The company name "PITBULL" is written below it.`
-- Mango 3 and Mango 3 Turbo render text natively in Russian, Arabic, Filipino, Thai, Turkish, Korean, Malay, Spanish, Portuguese, Indonesian, French, German, Vietnamese and Japanese, besides English and Chinese. Write the quoted words in their own script. Other Mango variants: English and Chinese.
+- Mango 4, Mango 3 and Mango 3 Turbo render text natively in Russian, Arabic, Filipino, Thai, Turkish, Korean, Malay, Spanish, Portuguese, Indonesian, French, German, Vietnamese and Japanese, besides English and Chinese. Write the quoted words in their own script. Other Mango variants: English and Chinese.
 - Text edits are edits: `Change the text on the sign to "OPEN LATE" in the same font.` "Enlarge the title to fill the red box and match its style to the saxophone icon."
 - Long copy that must be spelled letter-perfect belongs on GPT Image 2.5 Flare (`gpt-image.md`).
 
@@ -109,37 +110,37 @@ Keep [named elements: pose, face, composition, lighting] unchanged.
 
 ## Examples
 
-Text to image, a busy scene inventoried by place (Mango 3):
+Text to image, a busy scene inventoried by place (Mango 4):
 
 ```
 A cluttered developer's desk at night. An open laptop shows green code on a black screen. Beside it, a mug printed with the word "DEPLOY" lets off a thin curl of steam. An open notebook shows a hand-drawn Venn diagram of three overlapping circles in gray, blue and light green. A yellow sticky note carries a three-level mind map. A fountain pen lies with its cap beside it, next to a phone lighting up with a new message. A small pot of succulents sits in the far corner. Behind, a bookshelf falls soft and out of focus. A desk lamp on the right casts warm light and long shadows across the desk.
 ```
 
-A saved character in a saved outfit and location (Mango 3):
+A saved character in a saved outfit and location (Mango 4):
 
 ```
 Ana (@ana) wears @red-coat and stands at the rail of @harbor-pier at dusk, one hand on the rail, looking back over her shoulder toward the camera with a small smile. Wind lifts the hem of the coat. Keep her face, hair and the coat's cut and color exactly as in their images. Photorealistic, 50mm lens at eye level, the low sun behind her rimming her hair, harbor lights starting to glow in the background.
 ```
 
-Edit that keeps everything else (Mango 3, the product shot in `image`, the new bottle in `additional_images`):
+Edit that keeps everything else (Mango 4, the product shot in `image`, the new bottle in `additional_images`):
 
 ```
 Keep the composition, the marble surface, the lighting and the bottle's position unchanged. Replace the green glass bottle with the frosted white bottle from @image2, matching its label exactly. Its reflection and shadow on the marble follow the same light from the upper left.
 ```
 
-Point and box edit (Mango 3 Turbo for the draft, Mango 3 for the final; the room photo is `image`):
+Point and box edit (Mango 3 Turbo for the draft, Mango 4 for the final; the room photo is `image`):
 
 ```
 Replace the floor lamp at @image1 <point>812 430</point> with a tall potted fiddle-leaf fig in a terracotta pot. Replace the painting in @image1 <bbox>310 120 590 360</bbox> with a large black-and-white photograph of ocean waves. Keep @image1 <bbox>0 600 999 999</bbox> unchanged. Everything blends with the room's warm afternoon light.
 ```
 
-Character image for a video shoot (Mango 3, 2:3):
+Character image for a video shoot (Mango 4, 2:3):
 
 ```
 Asset: one fictional character identity reference for a live-action short film. One original woman, early thirties, athletic build, warm brown skin, dark brown eyes, short natural curls, small gold hoop earrings. She wears a faded olive bomber jacket over a white T-shirt, dark jeans and white sneakers. One person only, a single portrait from the top of her head through the knees, standing in a slight three-quarter turn with her face nearly frontal and both empty hands relaxed at her sides. Plain warm-gray studio backdrop, soft even light showing both eyes and the fabric textures, natural unretouched skin. Neutral closed-mouth expression. No writing, logos or watermark. No props. No collage or multiple views. This image fixes appearance only.
 ```
 
-Poster with non-English text (Mango 3):
+Poster with non-English text (Mango 4):
 
 ```
 A vertical poster for a neighborhood jazz night. A saxophonist in a brown suit plays under a single warm spotlight on a small brick-walled stage, his shadow long on the wall behind him. Across the top, the title "NOCHE DE JAZZ" in tall cream art-deco lettering; along the bottom, "Viernes · 21:00 · Café Lumbre" in small clean sans-serif. Deep navy and amber palette, screen-print texture.

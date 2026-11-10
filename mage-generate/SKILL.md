@@ -3,7 +3,7 @@ name: mage-generate
 description: |
   Generate images, video, and audio with Mage's models through the Mage
   connector (MCP): pick the right model, quote the price in Gems, generate,
-  and wait for the result. Defaults: Mango 3 for images, Cherry 2 Pro for
+  and wait for the result. Defaults: Mango 4 for images, Cherry 2 Pro for
   video, Seed Audio for audio. Use when: "generate an image", "make a
   picture", "make a video", "animate this image", "image to video", "edit
   this image", "change the background", "make music", "sound effect",
@@ -49,13 +49,13 @@ Use these defaults unless the user names a model or the request needs something 
 
 | Media | Default | Architecture | `model_id` |
 |---|---|---|---|
-| Image | Mango 3 | `mango` | `mango-v3` |
+| Image | Mango 4 | `mango` | `mango-v4` |
 | Video | Cherry 2 Pro | `cherry` | `cherry-2-pro` |
 | Audio | Seed Audio | `seed_audio` | `seed-audio-1.0` |
 
 Switch when the request calls for it:
 
-- **Text in the image** (posters, memes, comics, infographics, UI) → GPT Image 2.5 Flare (`gpt_image_2`, `gpt-image-2.5-flare`; set the `model_id`, the family default is opt-in). Cheap at its default quality. OpenAI's safety filter applies. Mango 3 handles short text itself.
+- **Text in the image** (posters, memes, comics, infographics, UI) → GPT Image 2.5 Flare (`gpt_image_2`, `gpt-image-2.5-flare`; set the `model_id`, the family default is opt-in). Cheap at its default quality. OpenAI's safety filter applies. Mango 4 handles short text itself.
 - **Photoreal people and products** (portraits, fashion, skin and fabric texture) → Guava 2 Pro (`guava`, `guava-2-pro`; set the `model_id`, the family default is the oldest Guava). Up to 3 reference images. Name the lens and the light.
 - **A faster, cheaper Mango** → Mango 3 Turbo (`mango-v3-turbo`). **3K stills** → Mango 3S (`mango-v3s`), only for 3K. **4K stills** → Mango 2 (`mango-v2`).
 - **A first or last frame, or cheaper video with sound** → Lemon (`lemon`, 2–30 s). Frames and reference images cannot be combined.
@@ -79,7 +79,7 @@ For several independent generations, start all of them first, then wait on each.
 
 ## Prompt guide per model
 
-Before the first prompt on a model in the conversation, read its file. It covers the prompt's structure, how Mage numbers images and voices for that model, dialogue and text syntax, what to avoid, and worked examples. Read Mango 3's or Cherry 2 Pro's for anything past a plain prompt: references, characters, an edit, several shots, dialogue, text in the image, or a result that missed.
+Before the first prompt on a model in the conversation, read its file. It covers the prompt's structure, how Mage numbers images and voices for that model, dialogue and text syntax, what to avoid, and worked examples. Read Mango 4's or Cherry 2 Pro's for anything past a plain prompt: references, characters, an edit, several shots, dialogue, text in the image, or a result that missed.
 
 | `architecture` | File |
 |---|---|

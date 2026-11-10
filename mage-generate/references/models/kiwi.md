@@ -44,7 +44,7 @@ Most weak prompts skip the aesthetic control and the style and come out as a sta
 
 - One optional `first_image`: the clip opens on it and takes its shape. There are no other image inputs.
 - Name the subject the way the frame shows it ("the man in the grey overcoat") and spend the rest on what moves.
-- For a person who must recur across clips, make the first frame on an image model that takes saved characters (Mango 3), then start each Kiwi clip from it.
+- For a person who must recur across clips, make the first frame on an image model that takes saved characters (Mango 4), then start each Kiwi clip from it.
 
 ## Audio and dialogue
 

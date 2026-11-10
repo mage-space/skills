@@ -30,7 +30,7 @@ smile. Plain warm-gray backdrop, 85mm lens, soft key light from the left,
 gentle fill, sharp focus on the eyes, natural skin texture.
 ```
 
-Illustrated character or mascot, Mango 3, `1:1`:
+Illustrated character or mascot, Mango 4, `1:1`:
 
 ```
 Character portrait of a friendly robot barista with a rounded copper body,

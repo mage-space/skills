@@ -4,7 +4,7 @@ description: |
   Design a new AI character from a list of traits with Mage and save it for
   reuse: gender, ethnicity, hair, skin, body, eyes, face, features, age, and
   clothing become a full-body portrait, then a character with an @handle. The
-  Character Builder: Attributes app as a skill, on Guava by default. Use when:
+  Character Builder: Attributes app as a skill, on Mango 4 by default. Use when:
   "build a character", "create a character from scratch", "character creator",
   "design a person: red hair, green eyes, freckles", "make me an AI
   influencer", "I need a model with these traits", "generate a character I can
@@ -61,7 +61,7 @@ A full-body standing portrait shot of a <gender>. High quality, detailed, studio
 
 ## Settings
 
-- Model: Guava (`guava`, `model_id: "guava"`) at `resolution: "1K"`, the app's default. Other models the app offers: `references/models.md`.
+- Model: Mango 4 (`mango`, `model_id: "mango-v4"`) at `resolution: "1K"`, the app's default. Other models the app offers: `references/models.md`.
 - `aspect_ratio`: always `4:5`.
 - No `image`.
 
@@ -69,7 +69,7 @@ A full-body standing portrait shot of a <gender>. High quality, detailed, studio
 
 ```json
 {
-  "model_id": "guava",
+  "model_id": "mango-v4",
   "resolution": "1K",
   "aspect_ratio": "4:5",
   "prompt": "<the built prompt>"

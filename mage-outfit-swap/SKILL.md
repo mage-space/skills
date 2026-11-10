@@ -3,7 +3,7 @@ name: mage-outfit-swap
 description: |
   Put the clothing, footwear, and accessories from one image onto the person
   in another with Mage, keeping the person, pose, and scene. The Outfit Swap
-  app as a skill, on Mango 3 by default. Use when: "outfit swap", "change her
+  app as a skill, on Mango 4 by default. Use when: "outfit swap", "change her
   outfit to this one", "put this jacket on him", "dress the model in this
   look", "try this outfit on", "same photo, different clothes", "virtual
   try-on of this garment on this person". NOT for: swapping a face
@@ -42,7 +42,7 @@ Both are required. Ask for whichever is missing.
 
 ## Settings
 
-- Model: Mango 3 (`mango`, `model_id: "mango-v3"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
+- Model: Mango 4 (`mango`, `model_id: "mango-v4"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
 - `aspect_ratio`: the model's option closest to the source image's width ÷ height, as the app does. Measure the file when you can run commands; otherwise judge it from the image, or ask. Use the first image's shape.
 
 ## Prompt
@@ -63,7 +63,7 @@ Do not replace the person or alter unrelated scene elements. Only change the wor
 
 ```json
 {
-  "model_id": "mango-v3",
+  "model_id": "mango-v4",
   "resolution": "2K",
   "aspect_ratio": "<closest to the first image>",
   "image": "<first image>",

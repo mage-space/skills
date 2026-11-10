@@ -50,7 +50,7 @@ Publisher: Mage (Ollano Inc.). Support: [mage@mage.space](mailto:mage@mage.space
 
 | Skill | Invoke | What it does |
 |---|---|---|
-| [`mage-generate`](./mage-generate) | `/mage-generate` | Images, video, and audio on the right Mage model, priced before it runs. Defaults: Mango 3, Cherry 2 Pro, Seed Audio. |
+| [`mage-generate`](./mage-generate) | `/mage-generate` | Images, video, and audio on the right Mage model, priced before it runs. Defaults: Mango 4, Cherry 2 Pro, Seed Audio. |
 | [`mage-characters`](./mage-characters) | `/mage-characters` | Save a person, mascot, outfit, place, or voice once and keep it consistent everywhere with `@handle`. |
 | [`mage-product-photoshoot`](./mage-product-photoshoot) | `/mage-product-photoshoot` | Ten photography modes from one product photo: studio, lifestyle, hands, Pinterest, hero, carousel, ads, try-on, concept, restyle. |
 | [`mage-marketplace-cards`](./mage-marketplace-cards) | `/mage-marketplace-cards` | A compliant white-background main image, secondary images, and A+ modules for Amazon and other marketplaces. |

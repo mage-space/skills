@@ -6,7 +6,7 @@ description: |
   cartoon, paper diorama, pastel flat 2D, hand-drawn ink, claymation,
   whiteboard, watercolor, pixel art, and more), with a voiceover, no
   presenter on camera. Researches the facts, writes the narration, locks the
-  look with a Mango 3 style key, and renders clips with narration and sound
+  look with a Mango 4 style key, and renders clips with narration and sound
   on Cherry 2 Pro; longer videos are made in blocks and joined. Use when:
   "faceless video", "faceless YouTube / TikTok channel", "explainer video",
   "narrated video about…", "animated story", "stickman video", "history
@@ -50,7 +50,7 @@ Each block holds about 2.5 spoken words per second: roughly 25 words for 10 s, 3
 ## Workflow
 
 1. **Research and script.** Hook in the first line, one idea per block, a payoff at the end. Spell out numbers as spoken. Label blocks: `Block 1: "<narration>"`.
-2. **Style key.** One Mango 3 (`mango`, `mango-v3`) image in the chosen style and aspect, from the recipe in `references/styles.md`: a representative scene from the video. Its URL becomes the style reference for every clip. Show it and let the user approve or adjust (cheap).
+2. **Style key.** One Mango 4 (`mango`, `mango-v4`) image in the chosen style and aspect, from the recipe in `references/styles.md`: a representative scene from the video. Its URL becomes the style reference for every clip. Show it and let the user approve or adjust (cheap).
 3. **Narrator voice** (for more than one block). For the same voice in every block, make a 10-second sample with Seed Audio (`seed_audio`) in the chosen voice, save it with `create_reference` (`kind: "audio"`), and mention its `@handle` in every clip prompt. A saved voice the user already has works the same way.
 4. **Clip prompts,** one per block, from the template in `references/styles.md`: STYLE (the same descriptor in every block), SCENE (what's on screen for this line), MOTION, NARRATION (the exact line), SOUND (ambience or music bed, no other voices).
 5. **Render** with Cherry 2 Pro (`cherry`, `cherry-2-pro`), style key in `image`, the chosen `aspect_ratio`, `duration` per block (`"10"` or `"15"`, up to `"30"` for a single clip), `resolution: "720p"`. Cherry Mini (`cherry-mini`) or Lemon (`lemon`) make cheaper drafts. `get_model`, `estimate_cost` for every block, quote the total, then `generate` all blocks (new UUID `idempotency_key` each) and wait on each with `get_request` (`wait_seconds: 120`).

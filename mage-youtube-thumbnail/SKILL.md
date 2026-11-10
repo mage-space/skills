@@ -5,7 +5,7 @@ description: |
   a truthful information-gap concept, up to three faces kept identical to
   their photos, an optional logo, bold punchy lighting, controlled variants
   (different emotions or takes), a headline baked in on request, and
-  surgical follow-up edits. Mango 3 renders, GPT Image 2.5 Flare adds text.
+  surgical follow-up edits. Mango 4 renders, GPT Image 2.5 Flare adds text.
   Use when: "YouTube thumbnail", "thumbnail for my video", "MrBeast-style
   thumbnail", "clickable thumbnail", "Shorts cover", "Reels cover",
   "Instagram video cover", "podcast episode cover", "make my face look
@@ -22,7 +22,7 @@ metadata:
 
 # Mage YouTube Thumbnail
 
-Design a thumbnail that makes people click and tells the truth about the video. Render it with Mango 3, keep faces identical to their photos, and make only the edits asked for afterwards.
+Design a thumbnail that makes people click and tells the truth about the video. Render it with Mango 4, keep faces identical to their photos, and make only the edits asked for afterwards.
 
 ## Before you start
 
@@ -54,7 +54,7 @@ Read `references/thumbnail-frameworks.md`. Brainstorm at least five truthful con
 
 ## Render
 
-Mango 3 (`mango`, `mango-v3`), `resolution: "2K"`. Face photos go in `image` and `additional_images` in character order, then the logo; saved people can be `@handle`s instead. Assemble the prompt in this order:
+Mango 4 (`mango`, `mango-v4`), `resolution: "2K"`. Face photos go in `image` and `additional_images` in character order, then the logo; saved people can be `@handle`s instead. Assemble the prompt in this order:
 
 1. **Frame:** "Bold, punchy YouTube-thumbnail image, poster-grade, photoreal and high-impact, not a muted movie still, <ratio>, one continuous shot with no split screen." For `9:16`, add "faces in the upper two-thirds".
 2. **Scene:** the chosen concept, exactly.
@@ -75,7 +75,7 @@ If you can see the results: faces match their photos, no stray text, the emotion
 
 ## Edits
 
-Use the picked result's URL as the only image, Mango 3, same ratio, and change one thing:
+Use the picked result's URL as the only image, Mango 4, same ratio, and change one thing:
 
 ```
 Change ONLY <the person's expression to: <phrase> / the background to: … /

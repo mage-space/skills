@@ -72,7 +72,7 @@ Ask your agent:
 
 > Use Mage to make a small test image of a paper boat.
 
-It should quote the price, generate with Mango 3, and give you a link.
+It should quote the price, generate with Mango 4, and give you a link.
 
 ## Update
 

@@ -4,7 +4,7 @@ description: |
   Turn one image of a character into a full character reference sheet with
   Mage: a face close-up, front, three-quarter, side, and back full-body views,
   and hair, outfit, and accessory details on one wide canvas, ready to save as
-  a character. The Character Sheet app as a skill, on Mango 3 by default.
+  a character. The Character Sheet app as a skill, on Mango 4 by default.
   Use when: "character sheet", "reference sheet", "model sheet", "turnaround
   of this character", "front side and back views", "make a sheet so my
   character stays consistent", "character design sheet from this image".
@@ -64,14 +64,14 @@ Add these details to the character in every panel. Where they differ from the im
 
 ## Settings
 
-- Model: Mango 3 (`mango`, `model_id: "mango-v3"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
+- Model: Mango 4 (`mango`, `model_id: "mango-v4"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
 - `aspect_ratio`: always `16:9`. The layout puts the face in a centered square column, so a square crop of the sheet is a face avatar; that only works at 16:9.
 
 ## Run
 
 ```json
 {
-  "model_id": "mango-v3",
+  "model_id": "mango-v4",
   "resolution": "2K",
   "aspect_ratio": "16:9",
   "image": "<the character image>",

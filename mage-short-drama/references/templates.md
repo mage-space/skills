@@ -87,7 +87,7 @@ Scene 1, diner, night. NORA stands behind the counter, facing the door; ELI sits
 
 ## Prompts
 
-### Identity still: Mango 3, 2:3
+### Identity still: Mango 4, 2:3
 
 ```text
 Character identity reference for a photoreal vertical drama. One original adult woman, NORA: late twenties, slim, light olive skin with faint freckles, dark brown hair in a low messy bun with loose strands, tired brown eyes. A pale grey diner uniform dress with a white collar, a navy cardigan with the sleeves pushed up, a plain silver watch.
@@ -97,7 +97,7 @@ Photoreal, natural unretouched skin texture, soft even studio light that shows b
 
 The still fixes appearance only: the scenes set the pose, expression and light.
 
-### Place still: Mango 3, 9:16
+### Place still: Mango 4, 9:16
 
 ```text
 An empty roadside diner at night, seen from the left end of the counter. The steel counter runs across the middle of the frame with four red stools in front of it; the register sits at the counter's right end; behind the stools, a window with a red neon sign whose letters cannot be read; the door at the far right. Warm overhead pendant lights pool on the counter; red neon spills across the stools. Photoreal, lived-in, no people, no readable text.

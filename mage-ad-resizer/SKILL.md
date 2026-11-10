@@ -6,7 +6,7 @@ description: |
   Pinterest. Recomposes the layout for each aspect ratio instead of cropping,
   extends the background, keeps every word, the product, and the logo, and
   respects each platform's safe zones. GPT Image 2.5 Flare for ads with
-  text, Mango 3 for image-only ads. Use when: "resize this ad", "make this
+  text, Mango 4 for image-only ads. Use when: "resize this ad", "make this
   ad 9:16", "adapt for Stories", "all ad sizes", "placements", "1:1 4:5
   9:16", "make a banner version", "reformat for TikTok / Meta / Pinterest /
   YouTube / Google Display". NOT for: new creative variations (use
@@ -52,7 +52,7 @@ Other Mage ratios (`3:2`, `5:4`, `2:3`, `9:21`) are available for custom slots. 
 ## Workflow
 
 1. **Read the ad.** List its text (every line, verbatim), the product, the logo, the CTA, the background, and the visual hierarchy.
-2. **Choose the model.** GPT Image 2.5 Flare (`gpt_image_2`, `gpt-image-2.5-flare`) when the ad has text; it renders words most reliably. Mango 3 (`mango`, `mango-v3`) for image-only ads. `resolution: "2K"`.
+2. **Choose the model.** GPT Image 2.5 Flare (`gpt_image_2`, `gpt-image-2.5-flare`) when the ad has text; it renders words most reliably. Mango 4 (`mango`, `mango-v4`) for image-only ads. `resolution: "2K"`.
 3. **Prompt each size**, with the original in `image`:
 
    ```

@@ -3,7 +3,7 @@ name: mage-inpaint
 description: |
   Change one region of an image with Mage and leave the rest identical: the
   region is marked with a red overlay, then replaced from a description. The
-  Inpaint app as a skill, on Mango 3 by default. Use when: "inpaint", "change
+  Inpaint app as a skill, on Mango 4 by default. Use when: "inpaint", "change
   just this part", "remove the cup from the table", "erase that person in the
   background", "replace the sign", "fix only his left hand", "add a plant in
   the corner", "edit this area and keep everything else". NOT for: whole-image
@@ -62,14 +62,14 @@ Only the slot changes. The sentences about the red overlay must stay as written:
 
 ## Settings
 
-- Model: Mango 3 (`mango`, `model_id: "mango-v3"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
+- Model: Mango 4 (`mango`, `model_id: "mango-v4"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
 - `aspect_ratio`: the model's option closest to the source image's width ÷ height, as the app does. Measure the file when you can run commands; otherwise judge it from the image, or ask.
 
 ## Run
 
 ```json
 {
-  "model_id": "mango-v3",
+  "model_id": "mango-v4",
   "resolution": "2K",
   "aspect_ratio": "<closest to the image>",
   "image": "<the masked image>",

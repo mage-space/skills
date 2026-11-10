@@ -5,7 +5,7 @@ description: |
   packshots, lifestyle scenes, close-ups with hands, Pinterest pins, hero
   banners, carousels, ad packs, virtual try-on, surreal concept shots, and
   seasonal restyles. Ten modes with built-in photography recipes, the right
-  Mage model per mode (Mango 3, Guava 2 Pro, GPT Image 2.5 Flare), and the
+  Mage model per mode (Mango 4, Guava 2 Pro, GPT Image 2.5 Flare), and the
   product kept faithful across every variant. Use when: "product photo",
   "product photoshoot", "studio shot", "packshot", "lifestyle image",
   "Pinterest pin", "hero banner", "carousel", "ad creatives", "Meta ads
@@ -43,18 +43,18 @@ Turn one product photo into a shoot. Pick a mode, ask a few labeled questions, w
 
 | Mode | For | Aspect | Model |
 |---|---|---|---|
-| `product_shot` | Packshot on white, gray, or a colored studio sweep | `1:1` or `4:5` | Mango 3 |
-| `lifestyle_scene` | Product in use in a real place: kitchen, gym, desk, outdoors | `4:5` | Mango 3 |
+| `product_shot` | Packshot on white, gray, or a colored studio sweep | `1:1` or `4:5` | Mango 4 |
+| `lifestyle_scene` | Product in use in a real place: kitchen, gym, desk, outdoors | `4:5` | Mango 4 |
 | `closeup_with_person` | Hands holding or applying it, partial face, demonstration | `4:5` | Guava 2 Pro |
-| `moodboard_pin` | Vertical, Pinterest-native, styled flat lay or vignette | `2:3` | Mango 3 |
-| `hero_banner` | Wide website, email, or campaign header with room for copy | `21:9` or `16:9` | Mango 3 |
-| `social_carousel` | 3–10 connected slides with one visual system | `4:5` or `1:1` | Mango 3 (Flare for text slides) |
-| `ad_creative_pack` | Static ad variants for Meta, TikTok, Pinterest, Google | `1:1`, `4:5`, `9:16` | GPT Image 2.5 Flare with copy, else Mango 3 |
+| `moodboard_pin` | Vertical, Pinterest-native, styled flat lay or vignette | `2:3` | Mango 4 |
+| `hero_banner` | Wide website, email, or campaign header with room for copy | `21:9` or `16:9` | Mango 4 |
+| `social_carousel` | 3–10 connected slides with one visual system | `4:5` or `1:1` | Mango 4 (Flare for text slides) |
+| `ad_creative_pack` | Static ad variants for Meta, TikTok, Pinterest, Google | `1:1`, `4:5`, `9:16` | GPT Image 2.5 Flare with copy, else Mango 4 |
 | `virtual_try_on` | Clothing, jewelry, or accessories worn by a model | `4:5` or `2:3` | Guava 2 Pro |
-| `conceptual_product` | Levitating, splash, frozen motion, surreal, sculptural, CGI | `4:5` or `1:1` | Mango 3 |
-| `restyle` | New mood, aesthetic, or season for an existing product image | same as source | Mango 3 |
+| `conceptual_product` | Levitating, splash, frozen motion, surreal, sculptural, CGI | `4:5` or `1:1` | Mango 4 |
+| `restyle` | New mood, aesthetic, or season for an existing product image | same as source | Mango 4 |
 
-Model ids: Mango 3 is `mango` / `mango-v3`; Guava 2 Pro is `guava` / `guava-2-pro` (at most 3 reference images); GPT Image 2.5 Flare is `gpt_image_2` / `gpt-image-2.5-flare`. Always `resolution: "2K"`. Confirm fields with `get_model`.
+Model ids: Mango 4 is `mango` / `mango-v4`; Guava 2 Pro is `guava` / `guava-2-pro` (at most 3 reference images); GPT Image 2.5 Flare is `gpt_image_2` / `gpt-image-2.5-flare`. Always `resolution: "2K"`. Confirm fields with `get_model`.
 
 ### Choosing the mode
 

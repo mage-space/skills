@@ -4,7 +4,7 @@ description: |
   Scripted short dramas with Mage, from one 30-second scene to a vertical
   series, with characters who act and speak in their own voices. Writes the
   story, bible, script, and shot list; makes identity stills and places on
-  Mango 3, voices on Seed Audio or Eleven Speech, and a storyboard on Mango 3
+  Mango 4, voices on Seed Audio or Eleven Speech, and a storyboard on Mango 4
   Turbo; films each scene as one multi-shot Cherry 2 Pro clip (or Lemon);
   adds voice-over and music; delivers the clips with an edit list, or joined
   with ffmpeg. Use when: "short drama", "vertical drama", "mini drama",
@@ -31,13 +31,13 @@ A short drama works when the story reads at a glance, every character looks and 
 
 1. **Mage tools:** `list_models`, `get_model`, `estimate_cost`, `generate`, `get_request`, `list_characters`, `create_character`, `list_references`, `create_reference`, and `create_upload` for local files. If they are missing, ask the user to connect Mage (Claude: Customize → Connectors → Add custom connector, `https://mcp.mage.space/mcp`; Claude Code: `/mcp` to sign in if the Mage plugin is installed, otherwise `claude mcp add --transport http mage https://mcp.mage.space/mcp`; others: https://www.mage.space/mcp), then wait.
 2. **What the user brought.** Skip any stage whose output the user already has (a script, a cast, a storyboard). Check `list_characters` and `list_references` before making a cast; reuse saved characters and places by `@handle`.
-3. **Models.** `list_models` shows what the account can run: Mango 3 and Mango 3 Turbo for stills, Cherry 2 Pro and Lemon for scenes, Seed Audio, Eleven Speech and Eleven Music for sound. Read `get_model` once per model before its first call.
+3. **Models.** `list_models` shows what the account can run: Mango 4 and Mango 3 Turbo for stills, Cherry 2 Pro and Lemon for scenes, Seed Audio, Eleven Speech and Eleven Music for sound. Read `get_model` once per model before its first call.
 
 ## UX rules
 
 1. Defaults, unless the user says otherwise: 9:16, 720p finals, photoreal live action, dialogue in the user's language, 30 seconds per scene or episode. Say what you assumed.
 2. The user's own story, script and lines are the contract: keep their events and words exactly, and write only what they left open.
-3. **Money is explicit.** Price every paid step with `estimate_cost`, show the logline, the lines and the total together, and wait for a yes. Video is the expensive step: a 30-second Cherry 2 Pro scene at 720p costs about as much as 75 Mango 3 stills or 380 Mango 3 Turbo keyframes. Ask again before anything the approved plan did not include.
+3. **Money is explicit.** Price every paid step with `estimate_cost`, show the logline, the lines and the total together, and wait for a yes. Video is the expensive step: a 30-second Cherry 2 Pro scene at 720p costs about as much as 75 Mango 4 stills or 380 Mango 3 Turbo keyframes. Ask again before anything the approved plan did not include.
 4. Characters are original people. Never cast a real person's likeness without that person's consent, and never a public figure.
 5. Be concise. Deliver links with short labels in story order, no JSON or request ids. Results expire after 30 days: say so once.
 
@@ -57,7 +57,7 @@ A short drama works when the story reads at a glance, every character looks and 
 | 3 | Outline (series) | Per episode: what happens, what is revealed, the hook it ends on | Writing |
 | 4 | Script | Scenes as action, reactions and exact lines | Writing |
 | 5 | Shot list | Blocking per scene; per shot the framing, start → action → end, the line, the sound | Writing |
-| 6 | Cast and places | An identity still per character, saved with a voice; an empty still per place | Mango 3, Seed Audio or Eleven Speech, `create_character`, `create_reference` |
+| 6 | Cast and places | An identity still per character, saved with a voice; an empty still per place | Mango 4, Seed Audio or Eleven Speech, `create_character`, `create_reference` |
 | 7 | Storyboard | A keyframe per shot: the draft the user approves | Mango 3 Turbo |
 | 8 | Scenes | One clip per scene of up to 30 seconds, several shots inside | Cherry 2 Pro (or Lemon) |
 | 9 | Voice-over, music | Narration; one music track per episode | Eleven Speech or Seed Audio; Eleven Music or Seed Audio |
@@ -89,8 +89,8 @@ Run the self-check in `references/templates.md` before pricing. Its last step re
 
 List every paid step with its model and settings, price each with `estimate_cost`, and show the total with the logline and the lines, so the user approves the story and the price together:
 
-- **Cast:** an identity still per character, Mango 3 (`mango`, `mango-v3`), 2:3.
-- **Places:** a still per place, Mango 3, 9:16.
+- **Cast:** an identity still per character, Mango 4 (`mango`, `mango-v4`), 2:3.
+- **Places:** a still per place, Mango 4, 9:16.
 - **Voices** (full path, or a voice the user asked for): a 10-second clip per speaking character, Seed Audio (`seed_audio`) or Eleven Speech (`eleven_speech`).
 - **Storyboard:** a keyframe per shot, Mango 3 Turbo (`mango-v3-turbo`), 9:16.
 - **Scenes:** one per scene, Cherry 2 Pro (`cherry`, `cherry-2-pro`), `aspect_ratio` 9:16, `resolution` 720p, `duration` the scene's length.
@@ -100,7 +100,7 @@ A series: plan the episodes the user asked for, with the cast and places once; w
 
 ## 3. Cast, voices and places
 
-- **Identity still** per character on Mango 3: one person, head to knees, a slight three-quarter turn with the face near-frontal and large, both hands empty and visible, plain backdrop, even light, neutral closed mouth. No props, text or labels: a video model copies text it finds in a reference. Check each still against the bible before saving it.
+- **Identity still** per character on Mango 4: one person, head to knees, a slight three-quarter turn with the face near-frontal and large, both hands empty and visible, plain backdrop, even light, neutral closed mouth. No props, text or labels: a video model copies text it finds in a reference. Check each still against the bible before saving it.
 - **Voices.** Inside one clip, Cherry keeps each voice by itself, so a single-scene drama needs no clips. Across clips, voices drift: give every recurring speaker a 10-second clip (one speaker, dry room, no music). Make it on Seed Audio with the character's identity still as `image` and a line in character (the model designs a voice that fits the face), or from a described voice; or on Eleven Speech in the preset `voice` that fits.
 - **Save the character** with `create_character`: the face, and the voice clip as `voice` (characters can't be edited later, so make the voice first). The face saves best as a tight, front-facing crop: when you can run commands, crop it from the still and upload it with `create_upload`; otherwise save the identity still itself, whose face is already large. When the costume must hold, also save the full still as an `outfit` reference with `create_reference`.
 - **Places:** an empty still of each location at 9:16, landmarks and light named, no people; save it as a `location` reference.
