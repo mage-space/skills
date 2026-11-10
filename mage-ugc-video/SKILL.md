@@ -5,7 +5,7 @@ description: |
   camera about the user's product in a review, unboxing, how-to, try-on,
   routine, or problem–solution format, with a scripted hook, spoken lines,
   and a call to action. Writes the script, previews the opening frame with
-  Mango 3 for a few Gems, then renders a vertical video with sound on Cherry
+  Mango 4 for a few Gems, then renders a vertical video with sound on Cherry
   2 Pro (or Lemon for a cheaper cut), keeping the product exact. Use when:
   "UGC video", "UGC ad", "creator video for my product", "product review
   video", "unboxing video", "TikTok ad", "Reels ad", "talking head ad",
@@ -54,7 +54,7 @@ Scripts, hooks, and timing: `references/ugc-scripts.md`.
 
 1. **Script.** Write the lines for the chosen length: about 20–25 spoken words for 10 seconds, 35–40 for 15. Open with a hook in the first two seconds, keep the product on camera, end on a short CTA. Every statement about the product, including how it feels, smells, fits, or works, comes from the user's facts or their product page; ask for two or three talking points when you have none.
 2. **Creator.** Use the user's `@character` (their voice comes along), or describe one. To reuse the same creator later, offer to save them with `mage-characters`.
-3. **Keyframe** with Mango 3 (`mango`, `mango-v3`), `aspect_ratio: "9:16"`, product in `image`:
+3. **Keyframe** with Mango 4 (`mango`, `mango-v4`), `aspect_ratio: "9:16"`, product in `image`:
 
    ```
    Vertical phone video frame: <creator> in <setting>, holding the product from

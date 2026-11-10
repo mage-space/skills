@@ -50,7 +50,7 @@ A video model that fills the motion between a first and a last frame, with gener
 - The output takes the first frame's shape: make the last frame the same shape and size, with the same subject and setting unless the move between them changes them.
 - A loop: the same image as first and last frame, with motion that returns to where it began.
 - Longer sequences: the last frame of one clip becomes the first frame of the next.
-- No characters or references here. For a recurring person, make both frames on an image model that takes saved characters (Mango 3), then animate between them.
+- No characters or references here. For a recurring person, make both frames on an image model that takes saved characters (Mango 4), then animate between them.
 
 ## Audio and dialogue
 

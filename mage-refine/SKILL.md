@@ -4,7 +4,7 @@ description: |
   Make one focused improvement to an existing image with Mage, keeping the
   subject, pose, light, and composition: the Refine app as a skill, with its
   three presets (fix eyes, fix hands, add detail) or the user's own
-  instruction, on Mango 3 by default. Use when: "refine this image", "fix the
+  instruction, on Mango 4 by default. Use when: "refine this image", "fix the
   eyes", "fix the hands", "fix the fingers", "add more detail", "sharpen the
   texture", "clean this up without changing it", "small improvement to this
   image". NOT for: changing one masked area only (mage-inpaint), new lighting
@@ -40,7 +40,7 @@ Improve an image without recomposing it: fix eyes, fix hands, add detail, or fol
 
 ## Settings
 
-- Model: Mango 3 (`mango`, `model_id: "mango-v3"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
+- Model: Mango 4 (`mango`, `model_id: "mango-v4"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
 - `aspect_ratio`: the model's option closest to the source image's width ÷ height, as the app does. Measure the file when you can run commands; otherwise judge it from the image, or ask.
 
 ## Prompt
@@ -59,7 +59,7 @@ For anything else, send the user's instruction as the app does: their own senten
 
 ```json
 {
-  "model_id": "mango-v3",
+  "model_id": "mango-v4",
   "resolution": "2K",
   "aspect_ratio": "<closest to the image>",
   "image": "<the image>",

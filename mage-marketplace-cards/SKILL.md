@@ -4,7 +4,7 @@ description: |
   Marketplace listing images with Mage: a compliant main image on pure white,
   secondary images (infographic, multiple angles, detail, lifestyle, what's in
   the box), and A+ / enhanced brand content modules, generated from one
-  product photo with the product kept exact. Mango 3 for product photos, GPT
+  product photo with the product kept exact. Mango 4 for product photos, GPT
   Image 2.5 Flare for images with text. Use when: "Amazon listing images",
   "marketplace images", "product listing photos", "main image", "white
   background image", "infographic for my product", "A+ content", "enhanced
@@ -52,12 +52,12 @@ Use a custom subset when the user names specific cards. Drop cards that don't ap
 
 | Card | Model | Aspect | Text |
 |---|---|---|---|
-| `main_image` | Mango 3 | `1:1` | None |
+| `main_image` | Mango 4 | `1:1` | None |
 | `infographic` | GPT Image 2.5 Flare | `1:1` | 3–5 short callouts from the user's facts |
-| `multi_angle` | Mango 3 | `1:1` | None |
-| `detail_shot` | Mango 3 | `1:1` | None |
-| `lifestyle` | Mango 3 (Guava 2 Pro if a person is central) | `1:1` | None |
-| `whats_in_box` | Mango 3 | `1:1` | None, or item labels via Flare |
+| `multi_angle` | Mango 4 | `1:1` | None |
+| `detail_shot` | Mango 4 | `1:1` | None |
+| `lifestyle` | Mango 4 (Guava 2 Pro if a person is central) | `1:1` | None |
+| `whats_in_box` | Mango 4 | `1:1` | None, or item labels via Flare |
 | `aplus_hero_banner` | GPT Image 2.5 Flare | `21:9` | Brand line |
 | `aplus_pain_points` | GPT Image 2.5 Flare | `16:9` | Problem → solution |
 | `aplus_features` | GPT Image 2.5 Flare | `16:9` | 3–4 features |
@@ -66,7 +66,7 @@ Use a custom subset when the user names specific cards. Drop cards that don't ap
 | `aplus_how_to_use` | GPT Image 2.5 Flare | `16:9` | 3 steps |
 | `aplus_endorsement` | GPT Image 2.5 Flare | `16:9` | Only real quotes the user supplies |
 
-Ids: Mango 3 `mango` / `mango-v3`; Guava 2 Pro `guava` / `guava-2-pro`; GPT Image 2.5 Flare `gpt_image_2` / `gpt-image-2.5-flare`. Use `resolution: "2K"`. Confirm fields with `get_model`.
+Ids: Mango 4 `mango` / `mango-v4`; Guava 2 Pro `guava` / `guava-2-pro`; GPT Image 2.5 Flare `gpt_image_2` / `gpt-image-2.5-flare`. Use `resolution: "2K"`. Confirm fields with `get_model`.
 
 ## Workflow
 

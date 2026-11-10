@@ -21,7 +21,7 @@
 
 ## When identity drifts
 
-- Use Mango 3 rather than a cheaper variant.
+- Use Mango 4 rather than a cheaper variant.
 - Make the face bigger in frame: medium close-up instead of a wide shot.
 - Remove competing people from the prompt.
 - Replace the saved portrait with a clearer one: delete the character and create it again with a better image (the handle becomes free once deleted).

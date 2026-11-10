@@ -123,7 +123,7 @@ Clean layout, strong contrast, brand colors <colors>.
 <Finish>
 ```
 
-Use GPT Image 2.5 Flare when the ad carries text, Mango 3 when it's image-only. Vary: the angle and scene per variant; keep the brand colors and type style fixed.
+Use GPT Image 2.5 Flare when the ad carries text, Mango 4 when it's image-only. Vary: the angle and scene per variant; keep the brand colors and type style fixed.
 Pitfalls: long copy; keep headlines under six words.
 
 ## virtual_try_on

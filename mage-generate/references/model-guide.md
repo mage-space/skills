@@ -6,8 +6,9 @@ Mage names its own models after fruit. Use these names with the user; never gues
 
 | Model | Architecture / `model_id` | Pick it for | Watch out for |
 |---|---|---|---|
-| Mango 3 | `mango` / `mango-v3` | The default. Exact instructions, the same character across a set, several references merged into one scene, edits that keep the rest of the image in place, short text in 16 languages. Up to 10 images, characters and references. | The priciest Mango; 1K or 2K only. |
-| Mango 3 Turbo | `mango` / `mango-v3-turbo` | Fast, cheap drafts and volume, with characters and references; strong layouts and text. The same prompt runs on Mango 3 for the final. | Not the default: use it when speed or price matters more. |
+| Mango 4 | `mango` / `mango-v4` | The default. Lifelike light and skin, sharp small text, edits that stay clean over many rounds, exact instructions, the same character across a set, several references merged into one scene, edits that keep the rest of the image in place, short text in 16 languages. Up to 10 images, characters and references. | 1K or 2K only. |
+| Mango 3 | `mango` / `mango-v3` | Matching earlier work made on Mango 3. | The priciest Mango, and no longer the default. 1K or 2K only. |
+| Mango 3 Turbo | `mango` / `mango-v3-turbo` | Fast, cheap drafts and volume, with characters and references; strong layouts and text. The same prompt runs on Mango 4 for the final. | Not the default: use it when speed or price matters more. |
 | Mango 3S | `mango` / `mango-v3s` | 3K output, with characters and references. Use it only when the user wants 3K. | No point or box tags. For speed or price, use Mango 3 Turbo instead. |
 | Mango 2 | `mango` / `mango-v2` | 4K stills. | Previous generation, 2K and above only. |
 | Guava 2 Pro | `guava` / `guava-2-pro` | Photoreal portraits, fashion, editorial, product shots that pass for photographs; skin, fabric, and hair texture. | Set `model_id`: the family default is the oldest Guava. At most 3 images; a vague prompt gives a generic studio look. |

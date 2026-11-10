@@ -59,13 +59,13 @@ Give the prompt in a code block, with one line saying it is ready to generate fr
 
 Offer to run it, with the price from `estimate_cost`, and do so when the user asked for an image rather than a prompt:
 
-- Model: Mango 3 (`mango`, `model_id: "mango-v3"`) at `2K`, Mage's default for stills, unless the user names another model. The same prompt gives different results on different models.
+- Model: Mango 4 (`mango`, `model_id: "mango-v4"`) at `2K`, Mage's default for stills, unless the user names another model. The same prompt gives different results on different models.
 - `aspect_ratio`: the option closest to the reference's shape, unless the user asked for another.
 - **Don't pass the reference image.** Recreate works from the prompt alone, so the result is a new image in the same look, not an edit.
 
 ```json
 {
-  "model_id": "mango-v3",
+  "model_id": "mango-v4",
   "resolution": "2K",
   "aspect_ratio": "<closest to the reference>",
   "prompt": "<the prompt>"

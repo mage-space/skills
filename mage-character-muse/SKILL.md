@@ -4,7 +4,7 @@ description: |
   Discover and refine a character from a starter image with Mage: keep what
   works, change the face or details step by step with presets or plain words,
   pick the best take, and save it as a reusable @handle. The Character
-  Builder: Muse app as a skill, on Mango 3 by default. Use when: "muse",
+  Builder: Muse app as a skill, on Mango 4 by default. Use when: "muse",
   "explore looks from this image", "refine this character", "same person but
   make the face softer", "try different faces on this character", "iterate on
   this portrait until it's right", "make her look more mature", "I like this
@@ -60,14 +60,14 @@ If the request gives neither, list the nine presets in one line and ask.
 
 ## Settings
 
-- Model: Mango 3 (`mango`, `model_id: "mango-v3"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
+- Model: Mango 4 (`mango`, `model_id: "mango-v4"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
 - `aspect_ratio`: always `4:5`. The app crops the selected image to 4:5 around its center first; when you can run commands and the image is more than about 5% away from 4:5, crop it the same way (`magick in.jpg -gravity center -crop 4:5 +repage out.jpg`) and upload the crop. Otherwise send it as it is.
 
 ## Run
 
 ```json
 {
-  "model_id": "mango-v3",
+  "model_id": "mango-v4",
   "resolution": "2K",
   "aspect_ratio": "4:5",
   "image": "<the selected image>",

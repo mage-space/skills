@@ -3,7 +3,7 @@ name: mage-angles
 description: |
   See an existing image from a new camera angle with Mage: the same subject,
   pose, light, and scene, shot by a second camera at a chosen height and side.
-  The Angles app as a skill, on Mango 3 by default. Use when: "new camera
+  The Angles app as a skill, on Mango 4 by default. Use when: "new camera
   angle", "show this from the side", "view from above", "low-angle shot of
   this image", "back view of this", "three-quarter view", "turn the camera
   around it", "more angles of this product", "coverage of this scene for a
@@ -67,14 +67,14 @@ The sentence always reads "a <angle> view", as the app writes it, including befo
 
 ## Settings
 
-- Model: Mango 3 (`mango`, `model_id: "mango-v3"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
+- Model: Mango 4 (`mango`, `model_id: "mango-v4"`) at `resolution: "2K"` for quality. When the user wants speed or a lower price, Mango 3 Turbo (`model_id: "mango-v3-turbo"`). Other models the app offers: `references/models.md`.
 - `aspect_ratio`: the model's option closest to the source image's width ÷ height, as the app does. Measure the file when you can run commands; otherwise judge it from the image, or ask.
 
 ## Run
 
 ```json
 {
-  "model_id": "mango-v3",
+  "model_id": "mango-v4",
   "resolution": "2K",
   "aspect_ratio": "<closest to the image>",
   "image": "<the image>",

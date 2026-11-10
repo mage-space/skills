@@ -19,7 +19,7 @@ Each style has a STYLE descriptor. Repeat it word for word in the style key and 
 
 Every descriptor ends with the realism ban: **"non-photorealistic, illustrated, no live action, no realistic human faces."**
 
-## Style key recipe (Mango 3)
+## Style key recipe (Mango 4)
 
 ```
 <STYLE descriptor>. A representative scene from the video: <the most iconic

@@ -12,7 +12,7 @@ Quote every word of on-image text exactly, and keep each line short. Text cards 
 
 ---
 
-## main_image (Mango 3, 1:1)
+## main_image (Mango 4, 1:1)
 
 ```
 <Product lock>
@@ -31,7 +31,7 @@ connected by thin lines to the relevant parts:
 "<Callout 1>", "<Callout 2>", "<Callout 3>". Title at the top: "<Title>".
 ```
 
-## multi_angle (Mango 3, 1:1)
+## multi_angle (Mango 4, 1:1)
 
 ```
 <Product lock>
@@ -41,7 +41,7 @@ side, and back, equal size and spacing, soft studio light, consistent shadows.
 
 If the back isn't visible in the reference, show front, three-quarter, and top instead, and say so.
 
-## detail_shot (Mango 3, 1:1)
+## detail_shot (Mango 4, 1:1)
 
 ```
 <Product lock>
@@ -49,7 +49,7 @@ Macro close-up of <the texture / the cap / the stitching / the label detail>,
 shallow depth of field, soft raking light revealing material quality.
 ```
 
-## lifestyle (Mango 3, 1:1)
+## lifestyle (Mango 4, 1:1)
 
 ```
 <Product lock>
@@ -58,7 +58,7 @@ light, believable home or outdoor context, the product clearly visible and in
 focus.
 ```
 
-## whats_in_box (Mango 3, 1:1)
+## whats_in_box (Mango 4, 1:1)
 
 ```
 <Product lock>

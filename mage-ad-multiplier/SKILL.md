@@ -4,7 +4,7 @@ description: |
   Turn one ad into many independent variations with Mage: new talent,
   wardrobe, setting, background, color story, or headline, while the product,
   brand, layout, and every untouched element stay exactly as they were.
-  Works on static image ads (Mango 3, GPT Image 2.5 Flare for headline
+  Works on static image ads (Mango 4, GPT Image 2.5 Flare for headline
   changes) and on video ads (Cherry 2 Pro edits that keep motion, framing,
   cuts, timing, and audio). Use when: "make variations of this ad",
   "multiply this ad", "ad variants", "creative testing", "A/B test
@@ -56,7 +56,7 @@ Recipes per axis: `references/variation-axes.md`.
 ## Static ads
 
 1. Pass the original ad in `image`; refer to it as `@image1`. Add a saved `@character` or an outfit `@reference` if the user wants a specific person or look.
-2. Model: Mango 3 (`mango`, `mango-v3`) for image changes; it keeps the rest of the image in place. For headline-only variations, GPT Image 2.5 Flare (`gpt_image_2`, `gpt-image-2.5-flare`) renders text most reliably. Match the original's `aspect_ratio`; `resolution: "2K"`.
+2. Model: Mango 4 (`mango`, `mango-v4`) for image changes; it keeps the rest of the image in place. For headline-only variations, GPT Image 2.5 Flare (`gpt_image_2`, `gpt-image-2.5-flare`) renders text most reliably. Match the original's `aspect_ratio`; `resolution: "2K"`.
 3. One prompt per variation from the axis recipe: the change, then the lock list.
 4. Headline variants: write the headlines first (short, distinct angles: benefit, urgency, social proof, curiosity, offer) and show them with the price in one message; generate after the user approves or edits them.
 

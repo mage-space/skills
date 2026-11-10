@@ -1,10 +1,11 @@
 # Models
 
-The app's model picker, in the connector's names. The default is Mango 3 (`mango-v3`) at `2K` for quality, with Mango 3 Turbo (`mango-v3-turbo`) for speed. Switch only when the user asks for a model, a higher resolution, or a lower price.
+The app's model picker, in the connector's names. The default is Mango 4 (`mango-v4`) at `2K` for quality, with Mango 3 Turbo (`mango-v3-turbo`) for speed. Switch only when the user asks for a model, a higher resolution, or a lower price.
 
 | Model | `architecture` | `model_id` | `resolution` | Notes |
 |---|---|---|---|---|
-| Mango 3 | `mango` | `mango-v3` | `1K`, `2K` | The default, for quality: the most faithful edits. |
+| Mango 4 | `mango` | `mango-v4` | `1K`, `2K` | The default, for quality: the most faithful edits. |
+| Mango 3 | `mango` | `mango-v3` | `1K`, `2K` | The previous default, for matching earlier work. |
 | Mango 3 Turbo | `mango` | `mango-v3-turbo` | `1K`, `2K` | For speed: the fastest and cheapest. |
 | Mango 3S | `mango` | `mango-v3s` | `2K`, `3K` | Only when the user asks for it or for 3K. Never the default. |
 | Mango 2 | `mango` | `mango-v2` | `2K`, `3K`, `4K` | The only one that reaches 4K. |

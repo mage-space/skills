@@ -6,7 +6,7 @@ description: |
   Creates characters from a portrait (optionally with a voice), creates
   references for outfits, poses, locations, objects, and voice clips, lists
   and deletes them, and generates the same character in new scenes with
-  Mango 3 or Cherry 2 Pro. Use when: "save this person as a character",
+  Mango 4 or Cherry 2 Pro. Use when: "save this person as a character",
   "keep the same face", "consistent character", "make my character",
   "digital twin", "reuse this outfit", "same person in every image", "give my
   character a voice", "put @handle in a video". Chain: create the character
@@ -42,7 +42,7 @@ Save someone or something once, then keep it consistent everywhere. A Mage **cha
 ## Save a character
 
 1. **Get a portrait.** One clear image of one subject: face visible, even light, plain background, head and shoulders, no sunglasses or heavy filters. See `references/portrait-guide.md`.
-   - No photo? Generate one first: Guava 2 Pro (`guava`, `guava-2-pro`) for a photoreal person, Mango 3 (`mango`, `mango-v3`) for an illustrated character or mascot, `1:1` or `4:5`. Use the prompt pattern in `references/portrait-guide.md` and show the portrait before saving it.
+   - No photo? Generate one first: Guava 2 Pro (`guava`, `guava-2-pro`) for a photoreal person, Mango 4 (`mango`, `mango-v4`) for an illustrated character or mascot, `1:1` or `4:5`. Use the prompt pattern in `references/portrait-guide.md` and show the portrait before saving it.
 2. **Pick a handle:** 1–15 lowercase letters, digits, `_` or `-`, starting with a letter. It cannot change later. If it is taken (`handle_taken`), suggest another.
 3. **Optional voice.** A voice clip (MP3 or WAV, trimmed to 10 seconds) makes the character speak in their own voice in Cherry and Lemon videos. No clip? Generate 10 seconds of the voice with Seed Audio (`seed_audio`), a line of natural speech in the voice you want, and pass its `result.url` as `voice`.
 4. **Create** with `create_character` (`name`, `image`, optional `handle`, `voice`, `description`).
@@ -64,7 +64,7 @@ For anything that isn't a whole character, call `create_reference` with a `kind`
 
 Write the handles in the prompt as natural language: "@nova sits in @corner-cafe wearing @red-coat, reading a book." Mage attaches each entity to the request.
 
-- **Images:** Mango 3 by default: it holds identity best across a set. Guava 2 Pro for photoreal close-ups. GPT Image 2.5 Flare when the image also needs text.
+- **Images:** Mango 4 by default: it holds identity best across a set. Guava 2 Pro for photoreal close-ups. GPT Image 2.5 Flare when the image also needs text.
 - **Video:** Cherry 2 Pro. A character with a voice speaks with it (`use_character_voices` defaults to true; set false to mute it). Quote the words: `@nova says, "Welcome back."`
 - **Budget:** characters, references, and the request's own images share the model's `max_images`, and voices share `mentions.max_audio_references`. `get_model` has both.
 
