@@ -41,7 +41,7 @@ Three rules run through it:
 ## UX rules
 
 1. **Reuse first.** Check `list_characters` and `list_references` (every page) and compare the images, not only the names. Use a master, sheet, or turntable the user already has; make only what is missing.
-2. **One plan, one price.** List the stages the route needs, price each paid step with `estimate_cost` using the exact config you will send, show the total, and wait for a yes. Video is the expensive part: every second of Lemon reference video bills like a second of output, again in every scene that uses it.
+2. **One plan, one price.** List the stages the route needs, price each paid step with `estimate_cost` using the exact config you will send, show the total, and wait for a yes. Video is the expensive part: every second of Lemon reference video bills like a second of output, again in every scene that uses it. Before the turntable exists, `estimate_cost` can't see it, so add its seconds to each scene at the scene's per-second rate (720p: 168 Gems; a 3 s scene with a 6 s turntable is 1,512, not 504). Once it exists, price each scene again with its URL in `videos`, and ask before any scene that costs more than you quoted.
 3. **Say the route and its trade-off** before generating, and report the route you actually ran.
 4. **Pilot before a batch:** one scene, checked, before the rest. A pilot that passes doesn't pass the others: check each one.
 5. **Only claim what you checked.** A completed request is not a pass. Say what you compared and where; if you can't view a result, say it needs the user's review and what to look for.
