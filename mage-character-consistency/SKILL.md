@@ -92,8 +92,8 @@ Mango 4 with the master as `image`, `16:9`, 2K. Template: Sheet in `references/p
 ## 5. The turntable (video where the character turns)
 
 1. **Split frame.** Mango 4 with the master as `image`, `16:9`: the full body in the left third, a large head-and-shoulders close-up in the right two-thirds, a thin vertical gap, the same grey studio. Template: Split frame. Check both figures are the same person.
-2. **Turntable.** Lemon (`lemon`) in frame mode: `first_image` = the split frame, `aspect_ratio: "16:9"`, `resolution: "720p"`, `audio: false`, `duration: "10"`; `"6"` when two characters share a scene or more than two scenes will use it, since it bills again in each. Template: Turntable. Frame mode takes no `@handles`: describe the character.
-3. **Check it** from start to end: one complete rotation at an even speed, both figures in sync, every sided detail on its side all the way round, the back of the head and the outfit matching the sheet. Regenerate on a side swap or a broken rotation; never trim away angles.
+2. **Turntable.** Lemon (`lemon`) in reference mode: the split frame as `image`, `@kai` and `@kai-look` in the prompt, `aspect_ratio: "16:9"`, `resolution: "720p"`, `audio: false`, `duration: "10"`; `"6"` when two characters share a scene or more than two scenes will use it, since it bills again in each. Template: Turntable. Not frame mode: a first frame shows only the front, and Lemon takes no reference beside one, so it would invent a back that contradicts the sheet in every scene.
+3. **Check it** from start to end: the split layout held (reference mode doesn't pin the first frame), one complete rotation at an even speed, both figures in sync, every sided detail on its side all the way round, the back of the head and the outfit matching the sheet. Regenerate on a side swap or a broken rotation; never trim away angles.
 4. **Use it as generated.** Don't retime, interpolate, or re-encode a reference: identity gains nothing and artifacts can creep in. Its result URL works directly in `videos`.
 
 ## 6. Scenes
@@ -104,7 +104,7 @@ Each prompt names the character once with the locked string, gives every referen
 - **Video, turntable route:** Lemon reference mode with the turntable in `videos`, the master as `image`, `@kai` (and `@kai-look`) in the prompt, `audio` as the brief needs. Say that Video 1 and image 1 only show the character, and nothing else from them appears. Write 3–4 timed shots, including the turn the job needs (walking away, a slow half orbit, a turn to the lens). Reference seconds plus `duration` must stay at or under 30.
 - **Video, fixed shot:** the scene still on Mango 4 first, checked, then Lemon with it as `first_image` and no mentions (frame mode rejects them).
 - **Video, final quality:** Cherry 2 Pro (`cherry`, `model_id: "cherry-2-pro"`) with the master as `image`, `@kai` and `@kai-look`, `Shot N` paragraphs without timestamps. Keep the motion simple: one or two actions per shot, no fights or crowds of look-alikes.
-- **Drafts:** Lemon at 480p, or Cherry Mini, with the same references and prompt. A draft that passes doesn't approve the final render: check that too.
+- **Drafts** at 480p, on the final's own route: Lemon with the same inputs and prompt for a Lemon scene; Cherry Mini (`model_id: "cherry-mini"`, 8 images) for a Cherry 2 Pro scene. Never give Cherry a turntable: its `videos` is one clip to edit, not a reference. A draft that passes doesn't approve the final render: check that too.
 
 ## 7. Two characters, new outfits
 
@@ -157,7 +157,8 @@ Mage's defaults on 2026-11-11. Quote the real config with `estimate_cost` before
 | Turntable at 720p, 10 s / 6 s | Lemon | 1,680 / 1,008 |
 | 10 s scene at 720p with a 10 s / 6 s turntable | Lemon | 3,360 / 2,688 |
 | 10 s scene at 720p | Cherry 2 Pro | 3,465 |
-| 10 s draft at 480p | Lemon / Cherry Mini | 816 / 600 |
+| 10 s draft at 480p with a 10 s / 6 s turntable | Lemon | 1,632 / 1,306 |
+| 10 s draft at 480p | Cherry Mini | 600 |
 
 ## Errors
 
