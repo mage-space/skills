@@ -37,6 +37,7 @@
     "./mage-faceless-video",
     "./mage-youtube-thumbnail",
     "./mage-short-drama",
+    "./mage-video-remake",
     "./mage-face-swap",
     "./mage-character-swap",
     "./mage-outfit-swap",

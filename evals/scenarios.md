@@ -56,6 +56,12 @@ Requests that should (✓) and should not (✗) load each skill. Use them to che
 - ✓ "Turn this script into episode 1 of a short drama series."
 - ✗ "A video scene of @nova and @kai on a dinner date." → mage-scene-builder
 
+## mage-video-remake
+- ✓ "Remake this viral TikTok with my character @nova: video.mp4"
+- ✓ "How was this video made? Is it AI? Then make one like it for my candle."
+- ✗ "Replace the dancer in this one clip with @nova and keep the rest." → mage-video-character-swap
+- ✗ "A 15-second UGC review of my protein bar." → mage-ugc-video
+
 ## mage-face-swap
 - ✓ "Put the face from this photo onto this one: <link> <link>"
 - ✗ "Swap her face in this video." → mage-video-face-swap

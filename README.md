@@ -61,6 +61,7 @@ Publisher: Mage (Ollano Inc.). Support: [mage@mage.space](mailto:mage@mage.space
 | [`mage-faceless-video`](./mage-faceless-video) | `/mage-faceless-video` | Narrated videos with no one on camera, in ten illustrated styles, researched and scripted. |
 | [`mage-youtube-thumbnail`](./mage-youtube-thumbnail) | `/mage-youtube-thumbnail` | Truthful, high-click thumbnails and covers with faces kept exact, variants, and surgical edits. |
 | [`mage-short-drama`](./mage-short-drama) | `/mage-short-drama` | Scripted vertical dramas, from one scene to a series: cast, voices, storyboard, multi-shot scenes, and the cut. |
+| [`mage-video-remake`](./mage-video-remake) | `/mage-video-remake` | A viral or reference video, broken down shot by shot with [rea-video](https://github.com/JuneYaooo/rea-video) and remade with your characters, product, and words. |
 
 ### Mage apps as skills
 
@@ -88,7 +89,7 @@ Each of these is one of the [apps on mage.space](https://www.mage.space/apps) as
 
 In Claude Code with the plugin, skills are namespaced: `/mage:mage-generate`.
 
-The skills chain: save a character with `mage-characters` and use its `@handle` everywhere; shoot a product with `mage-product-photoshoot`, then turn the winner into a listing (`mage-marketplace-cards`) or a video (`mage-ugc-video`); make an ad, then multiply, resize, and localize it; build a character with `mage-character-builder`, give it a sheet with `mage-character-sheet`, then put it in a scene (`mage-scene-builder`), make it talk (`mage-lipsync`), or cast it in a series (`mage-short-drama`). Recipes: [COOKBOOK.md](./COOKBOOK.md).
+The skills chain: save a character with `mage-characters` and use its `@handle` everywhere; shoot a product with `mage-product-photoshoot`, then turn the winner into a listing (`mage-marketplace-cards`) or a video (`mage-ugc-video`); make an ad, then multiply, resize, and localize it; build a character with `mage-character-builder`, give it a sheet with `mage-character-sheet`, then put it in a scene (`mage-scene-builder`), make it talk (`mage-lipsync`), cast it in a series (`mage-short-drama`), or star it in a remake of a viral video (`mage-video-remake`). Recipes: [COOKBOOK.md](./COOKBOOK.md).
 
 ## How they work
 
