@@ -79,15 +79,15 @@ One full-body image that everything else copies. Mango 4 (`mango`, `model_id: "m
 
 With no design yet, make 2 candidates, show them, and keep one. Before going on, check every locked detail at full size, on its side. A side wrong here is wrong in everything that follows.
 
-## 3. Save the character
-
-`create_character` with `name` and the face: when you can run commands, crop a tight, front-facing face from the master and upload it (`create_upload`); otherwise save the master itself. Use the handle it returns (`@kai`), never an assumed one. A character holds the face; the sheet carries the body, the clothes, and the back.
-
-## 4. The sheet
+## 3. The sheet
 
 Mango 4 with the master as `image`, `16:9`, 2K. Template: Sheet in `references/prompts.md`: a top row of front, right-profile, and back views, full body at one scale; a bottom row of front, three-quarter, and profile close-ups. Check every panel against the master and against each other; regenerate a swapped side now.
 
-Save it with `create_reference`, `kind: "outfit"` (`@kai-look`). Mage gives a reference to the model as "<kind> from image N", and "outfit from image N" is the sheet's main job; add one line for the rest: "it also shows his hair and build from the side and back; ignore its panels and grey background". **Never save a sheet as a `pose`:** "pose from image N" tells the model to copy the sheet's standing pose.
+## 4. Save them
+
+- **The face as a character.** `create_character` with `name` and the face: when you can run commands, crop the sheet's front close-up tight around the face and upload it (`create_upload`); otherwise save the master itself. Use the handle it returns (`@kai`), never an assumed one. A character holds the face; the sheet carries the body, the clothes, and the back.
+- **The sheet as an outfit.** `create_reference` with the sheet and `kind: "outfit"` (`@kai-look`). Mage gives a reference to the model as "<kind> from image N", and "outfit from image N" is the sheet's main job; one line in the prompt adds the rest: "it also shows his hair and build from the side and back; ignore its panels and grey background".
+- **Never save a sheet as a `pose`:** "pose from image N" tells the model to copy the sheet's standing pose.
 
 ## 5. The turntable (video where the character turns)
 
