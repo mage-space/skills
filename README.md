@@ -52,6 +52,7 @@ Publisher: Mage (Ollano Inc.). Support: [mage@mage.space](mailto:mage@mage.space
 |---|---|---|
 | [`mage-generate`](./mage-generate) | `/mage-generate` | Images, video, and audio on the right Mage model, priced before it runs. Defaults: Mango 4, Cherry 2 Pro, Seed Audio. |
 | [`mage-characters`](./mage-characters) | `/mage-characters` | Save a person, mascot, outfit, place, or voice once and keep it consistent everywhere with `@handle`. |
+| [`mage-character-consistency`](./mage-character-consistency) | `/mage-character-consistency` | One character across a series of stills and video shots, back views and turns included: locked details, a master, a sheet, a 360° turntable, and checks. |
 | [`mage-product-photoshoot`](./mage-product-photoshoot) | `/mage-product-photoshoot` | Ten photography modes from one product photo: studio, lifestyle, hands, Pinterest, hero, carousel, ads, try-on, concept, restyle. |
 | [`mage-marketplace-cards`](./mage-marketplace-cards) | `/mage-marketplace-cards` | A compliant white-background main image, secondary images, and A+ modules for Amazon and other marketplaces. |
 | [`mage-ad-multiplier`](./mage-ad-multiplier) | `/mage-ad-multiplier` | One ad into many test variants: talent, wardrobe, setting, color, season, or headline, everything else locked. |
@@ -88,7 +89,7 @@ Each of these is one of the [apps on mage.space](https://www.mage.space/apps) as
 
 In Claude Code with the plugin, skills are namespaced: `/mage:mage-generate`.
 
-The skills chain: save a character with `mage-characters` and use its `@handle` everywhere; shoot a product with `mage-product-photoshoot`, then turn the winner into a listing (`mage-marketplace-cards`) or a video (`mage-ugc-video`); make an ad, then multiply, resize, and localize it; build a character with `mage-character-builder`, give it a sheet with `mage-character-sheet`, then put it in a scene (`mage-scene-builder`), make it talk (`mage-lipsync`), or cast it in a series (`mage-short-drama`). Recipes: [COOKBOOK.md](./COOKBOOK.md).
+The skills chain: save a character with `mage-characters` and use its `@handle` everywhere, or keep it on model across a whole series of shots, back views and turns included, with `mage-character-consistency`; shoot a product with `mage-product-photoshoot`, then turn the winner into a listing (`mage-marketplace-cards`) or a video (`mage-ugc-video`); make an ad, then multiply, resize, and localize it; build a character with `mage-character-builder`, give it a sheet with `mage-character-sheet`, then put it in a scene (`mage-scene-builder`), make it talk (`mage-lipsync`), or cast it in a series (`mage-short-drama`). Recipes: [COOKBOOK.md](./COOKBOOK.md).
 
 ## How they work
 

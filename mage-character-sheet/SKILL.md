@@ -10,8 +10,9 @@ description: |
   character stays consistent", "character design sheet from this image".
   NOT for: one new camera angle of a scene (mage-angles), designing the
   character in the first place (mage-character-builder, mage-character-muse),
-  saving a plain portrait (mage-characters), or sheets of real people without
-  consent.
+  saving a plain portrait (mage-characters), keeping a character on model
+  across video shots with a turntable (mage-character-consistency), or sheets
+  of real people without consent.
 license: MIT
 compatibility: Requires the Mage connector (https://mcp.mage.space/mcp) and a Mage account with Gems.
 metadata:

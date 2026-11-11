@@ -11,9 +11,10 @@ description: |
   "digital twin", "reuse this outfit", "same person in every image", "give my
   character a voice", "put @handle in a video". Chain: create the character
   here, then any Mage skill can use its @handle. NOT for: one-off edits of a
-  single photo (use mage-generate), product listing sets
-  (mage-product-photoshoot or mage-marketplace-cards), or face swaps onto
-  real people without their consent.
+  single photo (use mage-generate), a character drifting across a series of
+  shots, back views, or turns in video (mage-character-consistency), product
+  listing sets (mage-product-photoshoot or mage-marketplace-cards), or face
+  swaps onto real people without their consent.
 license: MIT
 compatibility: Requires the Mage connector (https://mcp.mage.space/mcp) and a Mage account with Gems.
 metadata:
