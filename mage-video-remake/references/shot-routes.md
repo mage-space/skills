@@ -6,7 +6,7 @@ Read each model's fields once with `get_model` before its first call, price ever
 
 For one continuous take of 4 to 30 seconds whose motion is the point: a dance, a transition, a stunt, a product being handled. It keeps the motion, camera, cuts, and timing, and rebuilds the people (`motion_transfer`) or swaps an object, outfit, or place (`object_swap`).
 
-1. **Cut the stretch**, re-encoding so it starts on a frame: `ffmpeg -ss 3.2 -to 15.8 -i video.mp4 -c:v libx264 -crf 17 -pix_fmt yuv420p -c:a aac stretch.mp4`. A source outside the variant's window is refused, not trimmed.
+1. **Cut the stretch**, re-encoding so it starts on a frame: `ffmpeg -ss 3.2 -to 15.8 -i video.mp4 -c:v libx264 -crf 17 -pix_fmt yuv420p -c:a aac stretch.mp4`. A source outside the variant's window is refused, not trimmed. Magejutsu keeps everything burned into the picture, so pick a stretch with no captions, stickers, watermark, or other brand's logo (no `over` in its `reel/timeline.md` lines, and check the frames); if it has them, rebuild those shots instead.
 2. **Upload it** with `create_upload` and use the returned `url`.
 3. **References:** one clear photo per replaced person (sharp, front-facing; full-length for a dancer), or a saved `@handle`; a product alone on white for `object_swap`. Every visible person needs one, or the original's face stays.
 4. **Generate** (`magejutsu`):

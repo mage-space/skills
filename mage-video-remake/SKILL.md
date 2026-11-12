@@ -100,7 +100,7 @@ For each line: `generate` with a new UUID `idempotency_key`, then `get_request` 
 
 ### 7. Cut it to the original's timing
 
-Trim every clip to its shot's start and end from `reel/timeline.md`, never speeding it up, join them in order, lay the user's captions in the original's position and style, and put the new music under the whole cut. Commands: `references/assembly.md`.
+Trim every clip to its shot's exact start and end (the `time` line in `reel/shots/<n>.md`; the timeline rounds), never speeding it up, join them in order, lay the user's captions in the original's position and style, and put the new music under the whole cut. Commands: `references/assembly.md`.
 
 ## Deliver
 
