@@ -64,6 +64,13 @@ The cast and the diner stay saved by `@handle`, so every episode keeps the same 
 1. `mage-video-character-swap`: "Replace the dancer in this clip with @nova. <link>"
 2. `mage-video-editor`: "Now turn the studio into a rooftop at sunset."
 
+## Remake a viral video
+
+1. `mage-characters`: "Save this photo as a character called Nova. <link>"
+2. `mage-video-remake`: "Here's a TikTok that went viral: trend.mp4. How was it made? Then remake it with @nova and my water bottle (<link>), same hook and pacing, my own captions."
+
+The breakdown says which shots were filmed, generated, or built in code, so the plan only pays for what has to be generated. A dance or transition take is recast with Magejutsu; the rest is rebuilt shot by shot and cut to the original's timing.
+
 ## Costs
 
 Every skill quotes the price in Gems before it runs anything big. Images cost tens to a couple of hundred Gems; video costs thousands, climbing with resolution and length. Draft video with Cherry Mini or Lemon, then render the final on Cherry 2 Pro.
