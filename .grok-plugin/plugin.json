@@ -28,6 +28,7 @@
   "skills": [
     "./mage-generate",
     "./mage-characters",
+    "./mage-character-consistency",
     "./mage-product-photoshoot",
     "./mage-marketplace-cards",
     "./mage-ad-multiplier",

@@ -1,6 +1,6 @@
 # Install Mage Skills
 
-Twenty-seven skills ship in this repository. Ten are creative jobs: `mage-generate`, `mage-characters`, `mage-product-photoshoot`, `mage-marketplace-cards`, `mage-ad-multiplier`, `mage-ad-resizer`, `mage-ad-localizer`, `mage-ugc-video`, `mage-faceless-video`, and `mage-youtube-thumbnail`.
+Twenty-nine skills ship in this repository. Twelve are creative jobs: `mage-generate`, `mage-characters`, `mage-character-consistency`, `mage-product-photoshoot`, `mage-marketplace-cards`, `mage-ad-multiplier`, `mage-ad-resizer`, `mage-ad-localizer`, `mage-ugc-video`, `mage-faceless-video`, `mage-youtube-thumbnail`, and `mage-short-drama`.
 
 Seventeen are the [Mage apps](https://www.mage.space/apps) as skills: `mage-face-swap`, `mage-character-swap`, `mage-outfit-swap`, `mage-inpaint`, `mage-refine`, `mage-relight`, `mage-angles`, `mage-character-builder`, `mage-character-muse`, `mage-character-sheet`, `mage-recreate`, `mage-video-editor`, `mage-video-face-swap`, `mage-video-character-swap`, `mage-lipsync`, `mage-music-video`, and `mage-scene-builder`.
 

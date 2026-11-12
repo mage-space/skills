@@ -36,6 +36,14 @@ The product photo is the reference for everything, so the bottle looks the same 
 4. `mage-scene-builder`: "A late night drive with @nova and @kai, 10 seconds."
 5. `mage-lipsync`: "Make @nova say: 'Welcome back to the channel.'"
 
+## One character through a series of shots
+
+1. `mage-character-consistency`: "Design a courier for my series: late 20s, short silver hair, a scar through his LEFT eyebrow, a yellow messenger bag on his RIGHT shoulder. Make the master and the sheet first."
+2. `mage-character-consistency`: "Now a turntable, then a 10-second rooftop scene where he walks away from the camera and turns back to the lens."
+3. `mage-character-consistency`: "Same scene, final quality on Cherry 2 Pro."
+
+Approve the master and the sheet before the turntable: every later shot copies them, and they cost a fraction of one video. The turntable is made once and reused, but its seconds bill again in every Lemon scene that uses it.
+
 ## Film a vertical drama series
 
 1. `mage-characters`: "Save these two as Nora and Eli, and give each a voice that fits their face. <link> <link>"
