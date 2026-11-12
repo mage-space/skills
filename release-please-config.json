@@ -16,6 +16,7 @@
         { "type": "json", "path": ".grok-plugin/plugin.json", "jsonpath": "$.version" },
         "mage-generate/SKILL.md",
         "mage-characters/SKILL.md",
+        "mage-character-consistency/SKILL.md",
         "mage-product-photoshoot/SKILL.md",
         "mage-marketplace-cards/SKILL.md",
         "mage-ad-multiplier/SKILL.md",

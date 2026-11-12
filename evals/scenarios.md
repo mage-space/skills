@@ -12,6 +12,15 @@ Requests that should (✓) and should not (✗) load each skill. Use them to che
 - ✓ "Save this photo as a character called Kai."
 - ✓ "Keep the same face in all of these images."
 - ✗ "Change the background of this photo." → mage-generate
+- ✗ "My character's tattoo keeps switching sides between videos." → mage-character-consistency
+
+## mage-character-consistency
+- ✓ "My character looks different in every video, especially from behind. Fix it."
+- ✓ "Make a 360 turntable of @kai and use it for a rooftop scene."
+- ✓ "I need the same mascot across 12 shots, some from the side and back."
+- ✗ "Save this photo as a character called Kai." → mage-characters
+- ✗ "Make a character sheet from this image: <link>" → mage-character-sheet
+- ✗ "Put my character into this dance video: <link>" → mage-video-character-swap
 
 ## mage-product-photoshoot
 - ✓ "Studio and lifestyle shots of my sneaker: <link>"
