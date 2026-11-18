@@ -26,6 +26,7 @@ A code you don't know: treat it by what the message says, and don't loop.
 - **"input could not be fetched":** the link is a web page, private, or needs a login. Ask for a direct link to the file (it should end in `.jpg`, `.png`, `.mp4`, …) or upload it.
 - **A file the user attached in the chat:** Mage cannot see it. Ask for a link, or upload it from disk with `create_upload` if you can run commands.
 - **Too many images:** characters, references, and images share `max_images`. Drop one.
+- **Upload PUT refused:** a 403 means a header from `create_upload` is missing or changed; send all of `headers` exactly as returned. A 412 means that `upload_url` already holds a file; call `create_upload` again for a new one.
 
 ## Results
 
