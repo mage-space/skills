@@ -58,5 +58,8 @@ Pass the masked image as a data URL when the file is under about 3 MB. Otherwise
 
 ```bash
 curl -X PUT -T masked.jpg -H 'Content-Type: image/jpeg' \
-  -H 'x-goog-content-length-range: 0,104857600' '<upload_url>'
+  -H 'x-goog-content-length-range: 0,104857600' \
+  -H 'x-goog-if-generation-match: 0' '<upload_url>'
 ```
+
+Each `upload_url` takes one file. After adjusting the mask, call `create_upload` again for the new file; a second PUT to the same URL is refused (412).
