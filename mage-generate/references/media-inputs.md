@@ -19,8 +19,11 @@ Upload example:
 curl -X PUT -T clip.mp4 \
   -H 'Content-Type: video/mp4' \
   -H 'x-goog-content-length-range: 0,104857600' \
+  -H 'x-goog-if-generation-match: 0' \
   '<upload_url>'
 ```
+
+Send every header in `headers` exactly as returned; storage refuses the PUT (403) if one is missing or changed. Each `upload_url` takes one file: for a new or corrected file, call `create_upload` again rather than PUT to an earlier URL (412).
 
 ## Fields by model
 
